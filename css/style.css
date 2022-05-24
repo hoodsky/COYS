@@ -1,6 +1,145 @@
-html,
-body {
+body,
+html {
   height: 100%;
+  margin: 0;
+  color: #58595B;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h1 {
+  /* Header/H1 */
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 5.375rem;
+}
+
+h2 {
+  /* Header/H2 */
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 3.75rem;
+}
+
+h3 {
+  /* Header/H3 */
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h4 {
+  /* Header/H4 */
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h5 {
+  /* Header/H5 */
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+}
+
+p {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+p.big-text {
+  font-size: 1.0625rem;
+}
+
+p.sub-text {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.header {
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.header a {
+  display: block;
+  text-decoration: none;
+  color: #58595B;
+}
+
+.header__nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5625rem;
+}
+
+.header__nav ul li {
+  display: block;
+}
+
+.header__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5625rem;
+}
+
+.header__links .lang {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.header__search {
+  display: none;
+}
+
+.footer {
+  padding: 33px 0;
+  margin: 22px 22px 0 22px;
+  border-top: 1px solid #58595B;
 }
 
 .wrapper {

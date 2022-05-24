@@ -1,0 +1,90 @@
+@function rem($px) {
+    $result: ($px/16)+rem;
+    @return $result;
+}
+
+$font-color: #58595B;
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    color: $font-color;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(16);
+    line-height: rem(24);
+}
+
+h1 {
+    /* Header/H1 */
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: rem(64);
+    line-height: rem(86);
+}
+
+h2 {
+    /* Header/H2 */
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(48);
+    line-height: rem(60);
+}
+
+h3 {
+    /* Header/H3 */
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(32);
+    line-height: rem(40);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+h4 {
+    /* Header/H4 */
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(24);
+    line-height: rem(36);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+h5 {
+    /* Header/H5 */
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(18);
+    line-height: rem(30);
+}
+
+p {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(16);
+    line-height: rem(24);
+}
+
+p.big-text {
+    font-size: rem(17);
+}
+
+p.sub-text {
+
+    font-size: rem(14);
+    line-height: rem(18);
+}

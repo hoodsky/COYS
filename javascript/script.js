@@ -30,4 +30,5 @@ function includeHTML() {
         }
     }
 }
+// скрипт для вставки шапки и подвала на страницу
 includeHTML();
