@@ -68,13 +68,32 @@
                         </h5>
                     </div>
                     <label>
-                        <p class="big-text">Для індувідуального пошиву, залишіть свій номер
-                        </p>
+                        <p class="big-text">Для індувідуального пошиву, залишіть свій номер </p>
                         <form>
-                            <input type="tel" name="" id="">
-                            <button type="submit">Замовити</button>
+
+                            <input type="tel" name="phone" id="" maxlength="9" placeholder="_________"
+                                pattern="[0-9]{9}" required>
+                            <span>+380</span>
+                            <button type="submit" disabled>Замовити</button>
                         </form>
                     </label>
+                </div>
+            </div>
+            <div class="relevant">
+                <div class="relevant-new relevant__link">
+                    <a href="">
+                        <span class="relevant-name">новинки</span>
+                    </a>
+                </div>
+                <div class="relevant-sale relevant__link">
+                    <a href="">
+                        <span class="relevant-name">розпродаж</span>
+                    </a>
+                </div>
+                <div class="relevant-bestseller relevant__link">
+                    <a href="">
+                        <span class="relevant-name">бестселери</span>
+                    </a>
                 </div>
             </div>
         </main>
