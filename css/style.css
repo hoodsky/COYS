@@ -461,6 +461,7 @@ p.sub-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 95px;
 }
 
 .gender-section .gender {
@@ -543,5 +544,50 @@ p.sub-text {
   pointer-events: none;
   background: url("../img/man.png") right top no-repeat;
   background-size: cover;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.individual-order {
+  margin: 0 100px;
+}
+
+.individual-order__title {
+  border-bottom: 1px solid #000;
+  padding-bottom: 40px;
+}
+
+.individual-order__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.individual-order form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.individual-order form input {
+  background: #EFEDE9;
+  border: 1px solid #DFDBD4;
+}
+
+.individual-order form button {
+  background: #F0DED0;
+  border: none;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 1.1875rem;
 }
 /*# sourceMappingURL=style.css.map */

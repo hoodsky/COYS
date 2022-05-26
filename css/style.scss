@@ -182,6 +182,7 @@ $maxWidthContainer: 1200; //максимальный размер контейн
 
 .gender-section {
     display: flex;
+    margin-bottom: 95px;
 
     .gender {
         height: 80vh;
@@ -256,4 +257,46 @@ $maxWidthContainer: 1200; //максимальный размер контейн
 
     }
 
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+
+}
+
+.individual-order {
+    margin: 0 100px;
+
+    &__title {
+        border-bottom: 1px solid #000;
+        padding-bottom: 40px;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    form {
+        display: flex;
+
+        input {
+            background: #EFEDE9;
+            border: 1px solid #DFDBD4;
+        }
+
+        button {
+            background: #F0DED0;
+            border: none;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 300;
+            font-size: rem(14);
+            line-height: rem(18);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            padding: rem(19);
+        }
+    }
 }
