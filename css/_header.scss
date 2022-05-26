@@ -56,20 +56,14 @@ $maxWidthContainer: 1200; //максимальный размер контейн
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 300;
-    font-size: rem(12);
-    line-height: rem(21);
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    position: fixed;
+    background-color: #fff;
+    width: calc(100% - 48px);
+    z-index: 10;
 
     a {
         display: block;
-        text-decoration: none;
-        color: $font-color;
+
     }
 
     &__nav ul {

@@ -2,4 +2,24 @@
     padding: 33px 0;
     margin: 22px 22px 0 22px;
     border-top: 1px solid $font-color;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+
+        .footer-nav__social {
+            display: flex;
+            gap: rem(20);
+        }
+
+        ul {
+            margin-left: rem(32);
+            display: flex;
+            gap: rem(32);
+
+            li {
+                display: block;
+            }
+        }
+    }
 }

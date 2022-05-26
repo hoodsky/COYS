@@ -1,7 +1,3 @@
-@import 'uikit';
-@import 'header';
-@import 'footer';
-
 //TO%
 @function prc($pxOne, $pxTwo) {
     $result: ($pxOne/$pxTwo)*100%;
@@ -54,6 +50,9 @@ $maxWidthContainer: 1200; //максимальный размер контейн
 
 //@include adaptiv-value("значение", начальный размер, конечный размер, тип(1-меньше контейнера, 2-больше, 0-всегда))
 
+@import 'uikit';
+@import 'header';
+@import 'footer';
 
 
 .wrapper {
@@ -64,9 +63,197 @@ $maxWidthContainer: 1200; //максимальный размер контейн
 
 .main {
     flex: 1 1 auto;
+    margin-top: 90px;
 }
 
+.nav {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(12);
+    line-height: rem(21);
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        content: '';
+        background-color: rgba(66, 41, 23, 0.3);
+        pointer-events: none;
+    }
+
+    &__slides {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            width: 50vw;
+            height: 80vh;
+            flex: 1 0 auto;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .slide1 {
+            background: url('../img/slider/01.png') no-repeat center center;
+            background-size: cover;
+
+        }
+
+        .slide2 {
+            background: url('../img/slider/02.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .slide3 {
+            background: url('../img/slider/03.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .slide4 {
+            background: url('../img/slider/04.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .slide5 {
+            background: url('../img/slider/05.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .slide6 {
+            background: url('../img/slider/06.png') no-repeat center center;
+            background-size: cover;
+        }
+    }
+
+    &__title-div {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        pointer-events: none;
+    }
+
+    &__title {
+        color: #fff;
+    }
+
+    &__subtitle {
+        background-color: #fff;
+        max-width: rem(368);
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    &span {
+        font-family: 'Gilroy';
+        line-height: rem(24);
 
 
+    }
+}
 
-.content {}
+.gender-section {
+    display: flex;
+
+    .gender {
+        height: 80vh;
+        width: 50vw;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        a {
+            z-index: 2;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            display: block;
+            z-index: 1;
+            background: #fff;
+            padding: rem(20);
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 300;
+            font-size: rem(24);
+            line-height: rem(18);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        &.woman {
+            background: rgba(244, 216, 212, 1);
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                pointer-events: none;
+                background: url('../img/woman.png') left top no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &.man {
+            background: rgba(136, 149, 164, 1);
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                pointer-events: none;
+                background: url('../img/man.png') right top no-repeat;
+                background-size: cover;
+            }
+        }
+
+
+    }
+
+}
