@@ -336,6 +336,26 @@ p.sub-text {
   text-decoration: none;
   display: block;
   position: relative;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.nav .nav-link:active {
+  color: #d3a785;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.nav .nav-link:disabled {
+  color: #d4cfc5;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.nav .nav-link:disabled::before {
+  background-color: #d4cfc5;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .nav .nav-link::before {
@@ -345,15 +365,25 @@ p.sub-text {
   height: 1px;
   bottom: 3px;
   left: 0;
-  width: 0;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  right: 0;
+  opacity: .5;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.nav .nav-link:hover:active::before {
+  background-color: #d3a785;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .nav .nav-link:hover::before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  width: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .slider {
@@ -505,6 +535,19 @@ p.sub-text {
   overflow: hidden;
 }
 
+.gender-section .gender:hover a span {
+  background: white;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.gender-section .gender:hover a span::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
 .gender-section .gender:hover::before {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -533,9 +576,10 @@ p.sub-text {
 }
 
 .gender-section .gender span {
+  position: relative;
   display: block;
   z-index: 1;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
   padding: 1.25rem;
   font-family: 'Gilroy';
   font-style: normal;
@@ -544,6 +588,22 @@ p.sub-text {
   line-height: 1.125rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.gender-section .gender span::before {
+  content: '';
+  position: absolute;
+  left: 0.9375rem;
+  right: 0.9375rem;
+  bottom: 0.9375rem;
+  height: 1px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background-color: #58595B;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .gender-section .gender.woman {
@@ -697,7 +757,7 @@ p.sub-text {
 }
 
 .relevant .relevant__link {
-  width: 33vw;
+  width: 33.33vw;
   height: 70vh;
   position: relative;
   overflow: hidden;
@@ -708,6 +768,12 @@ p.sub-text {
           transform: scale(1.1);
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+}
+
+.relevant .relevant__link:hover > a > .relevant-name {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .relevant .relevant__link a {
@@ -728,11 +794,14 @@ p.sub-text {
   line-height: 3.75rem;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: #000000;
+  color: #58595B;
   position: absolute;
   left: 0;
-  top: 20px;
   right: 0;
+  top: 0;
+  padding: 5px 10px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .relevant .relevant-new {

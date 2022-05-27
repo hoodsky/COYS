@@ -146,6 +146,10 @@ html {
     font-size: rem(16);
     line-height: rem(24);
     scroll-behavior: smooth;
+
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
 }
 
 a {

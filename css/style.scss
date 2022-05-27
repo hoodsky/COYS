@@ -11,7 +11,6 @@
 }
 
 //EM
-
 @function em($px) {
     $result: ($px/16)+rem;
     @return $result;
@@ -81,21 +80,44 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         text-decoration: none;
         display: block;
         position: relative;
+        transition: all .5s ease;
+
+        &:active {
+            color: rgba(211, 167, 133, 1);
+            transition: all .5s ease;
+        }
+
+        &:disabled {
+            color: rgba(212, 207, 197, 1);
+            transition: all .5s ease;
+        }
+
+        &:disabled::before {
+            background-color: rgba(212, 207, 197, 1);
+            transition: all .5s ease;
+        }
 
         &::before {
             content: '';
             position: absolute;
-            background-color: #58595B;
+            background-color: $font-color;
             height: 1px;
             bottom: 3px;
             left: 0;
-            width: 0;
-            transition: all .3s ease;
+            right: 0;
+            opacity: .5;
+            transform: scale(0);
+            transition: all .5s ease;
+        }
+
+        &:hover:active::before {
+            background-color: rgba(211, 167, 133, 1);
+            transition: all .5s ease;
         }
 
         &:hover::before {
-            transition: all .3s ease;
-            width: 100%;
+            transform: scale(1);
+            transition: all .5s ease;
         }
     }
 }
@@ -202,9 +224,6 @@ $maxWidthContainer: 1200; //максимальный размер контейн
     }
 }
 
-
-
-
 .gender-section {
     display: flex;
     margin-bottom: 95px;
@@ -220,6 +239,16 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         overflow: hidden;
 
         &:hover {
+            a span {
+                background: rgba(255, 255, 255, 1);
+                transition: all 1s ease;
+            }
+
+            a span::before {
+                transform: scale(1);
+                transition: all 1s ease;
+            }
+
             &::before {
                 transform: scale(1.1);
                 transition: all 1s ease;
@@ -241,9 +270,10 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         }
 
         span {
+            position: relative;
             display: block;
             z-index: 1;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.7);
             padding: rem(20);
             font-family: 'Gilroy';
             font-style: normal;
@@ -252,11 +282,23 @@ $maxWidthContainer: 1200; //максимальный размер контейн
             line-height: rem(18);
             letter-spacing: 0.3em;
             text-transform: uppercase;
+            transition: all 1s ease;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: rem(15);
+                right: rem(15);
+                bottom: rem(15);
+                height: 1px;
+                transform: scale(0);
+                background-color: $font-color;
+                transition: all 1s ease;
+            }
         }
 
         &.woman {
             background: rgba(244, 216, 212, 1);
-
 
             &::before {
                 content: '';
@@ -269,7 +311,6 @@ $maxWidthContainer: 1200; //максимальный размер контейн
                 background: url('../img/woman.png') center top no-repeat;
                 background-size: cover;
                 transition: all 1s ease;
-
             }
         }
 
@@ -289,10 +330,7 @@ $maxWidthContainer: 1200; //максимальный размер контейн
                 transition: all 1s ease;
             }
         }
-
-
     }
-
 }
 
 .individual-order {
@@ -311,7 +349,6 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         margin-top: 53px;
         gap: 50px;
         flex-wrap: wrap;
-
 
         label p {
             margin-bottom: 20px;
@@ -385,12 +422,11 @@ $maxWidthContainer: 1200; //максимальный размер контейн
 }
 
 .relevant {
-
     display: flex;
     margin-top: 114px;
 
     .relevant__link {
-        width: 33vw;
+        width: 33.33vw;
         height: 70vh;
         position: relative;
         overflow: hidden;
@@ -399,6 +435,11 @@ $maxWidthContainer: 1200; //максимальный размер контейн
             &::before {
                 transform: scale(1.1);
                 transition: all 1s ease;
+            }
+
+            >a>.relevant-name {
+                background-color: rgba(255, 255, 255, 0.5);
+                transition: all 1s;
             }
         }
 
@@ -420,11 +461,14 @@ $maxWidthContainer: 1200; //максимальный размер контейн
                 line-height: rem(60);
                 letter-spacing: 0.5em;
                 text-transform: uppercase;
-                color: #000000;
+                color: $font-color;
                 position: absolute;
                 left: 0;
-                top: 20px;
                 right: 0;
+                top: 0;
+                // border: 1px solid;
+                padding: 5px 10px;
+                transition: all 1s;
             }
         }
 
@@ -481,6 +525,4 @@ $maxWidthContainer: 1200; //максимальный размер контейн
             transition: all 1s ease;
         }
     }
-
-
 }
