@@ -64,7 +64,7 @@ $maxWidthContainer: 1200; //максимальный размер контейн
     background: #fff;
 
     .loaded_hiding & {
-        transition: 1s opacity;
+        transition: .5s opacity;
         opacity: 0;
     }
 
@@ -176,10 +176,12 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         flex-wrap: nowrap;
         overflow-x: scroll;
         overflow-y: hidden;
+        transition: .5s;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         -ms-overflow-style: -ms-autohiding-scrollbar;
         scrollbar-width: none;
+
 
         &::-webkit-scrollbar {
             display: none;
@@ -196,7 +198,6 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         .slide1 {
             background: url('../img/slider/01.png') no-repeat center center;
             background-size: cover;
-
         }
 
         .slide2 {
@@ -222,6 +223,31 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         .slide6 {
             background: url('../img/slider/06.png') no-repeat center center;
             background-size: cover;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        gap: 33px;
+        bottom: 100px;
+        list-style: none;
+
+        .dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.5);
+            }
+
+            &.active {
+                background: #fff;
+            }
         }
     }
 

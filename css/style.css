@@ -316,8 +316,8 @@ p.sub-text {
 }
 
 .loaded_hiding .page-loader {
-  -webkit-transition: 1s opacity;
-  transition: 1s opacity;
+  -webkit-transition: .5s opacity;
+  transition: .5s opacity;
   opacity: 0;
 }
 
@@ -460,6 +460,8 @@ p.sub-text {
       flex-wrap: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -509,6 +511,35 @@ p.sub-text {
 .slider__slides .slide6 {
   background: url("../img/slider/06.png") no-repeat center center;
   background-size: cover;
+}
+
+.slider__dots {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 33px;
+  bottom: 100px;
+  list-style: none;
+}
+
+.slider__dots .dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.slider__dots .dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slider__dots .dot.active {
+  background: #fff;
 }
 
 .slider__title-div {
