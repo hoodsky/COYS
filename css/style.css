@@ -316,8 +316,8 @@ p.sub-text {
 }
 
 .loaded_hiding .page-loader {
-  -webkit-transition: .3s opacity;
-  transition: .3s opacity;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
   opacity: 0;
 }
 

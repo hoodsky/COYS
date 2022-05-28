@@ -64,7 +64,7 @@ $maxWidthContainer: 1200; //максимальный размер контейн
     background: #fff;
 
     .loaded_hiding & {
-        transition: .3s opacity;
+        transition: 1s opacity;
         opacity: 0;
     }
 
