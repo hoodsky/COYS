@@ -13,6 +13,12 @@
 </head>
 
 <body>
+
+    <!-- предзагрузка страницы -->
+    <div class="page-loader">
+        <div></div>
+    </div>
+
     <div class="wrapper">
         <header class="header" w3-include-html="header.html"> </header>
         <main class="main">
@@ -25,6 +31,7 @@
                     <div class="slide5 slide"></div>
                     <div class="slide6 slide"></div>
                 </div>
+                <div class="slider__dots"></div>
                 <div class="slider__title-div">
                     <div class="slider__title">
                         <h1>Colors Of Your Soul</h1>
@@ -70,10 +77,10 @@
                     <label>
                         <p class="big-text">Для індувідуального пошиву, залишіть свій номер </p>
                         <form>
-                            <input type="tel" name="phone" id="" maxlength="9" placeholder="_________"
-                                pattern="[0-9]{9}" required>
+                            <input class="telnumber" type="tel" name="phone" id="telnumber" maxlength="9"
+                                placeholder="_________" pattern="[0-9]{9}" required>
                             <span>+380</span>
-                            <button type="submit" disabled>Замовити</button>
+                            <button type="submit" id="telsubmit" class="telsubmit" disabled>Замовити</button>
                         </form>
                     </label>
                 </div>

@@ -32,3 +32,27 @@ function includeHTML() {
 }
 // скрипт для вставки шапки и подвала на страницу
 includeHTML();
+
+//проверка ввода текста для активации кнопки
+
+function checkInput() {
+    let tel = document.querySelector('.telnumber');
+    let but = document.querySelector('.telsubmit');
+
+    tel.addEventListener('input', function () {
+        but.disabled = (tel.validity.valid != true);
+    });
+}
+
+checkInput();
+
+// предзагрузка страницы
+
+window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+
+    window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+    }, 500);
+}
