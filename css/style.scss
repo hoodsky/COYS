@@ -182,7 +182,6 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         -ms-overflow-style: -ms-autohiding-scrollbar;
         scrollbar-width: none;
 
-
         &::-webkit-scrollbar {
             display: none;
         }
@@ -583,5 +582,27 @@ $maxWidthContainer: 1200; //максимальный размер контейн
             background-size: cover;
             transition: all 1s ease;
         }
+    }
+}
+
+.scroll-top {
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    bottom: 30px;
+    right: 30px;
+    border-top: $font-color 1px solid;
+    border-left: $font-color 1px solid;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        transform: scale(1.1) rotate(45deg);
+        transition: all .3s;
+    }
+
+    &.hide {
+        bottom: -30px;
     }
 }

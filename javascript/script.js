@@ -37,6 +37,7 @@ includeHTML();
 
 window.onload = function () {
     document.body.classList.add('loaded_hiding');
+    generateInd();
 
     window.setTimeout(function () {
         document.body.classList.add('loaded');
@@ -46,10 +47,9 @@ window.onload = function () {
 
 //слайдер
 
-const slides = document.querySelectorAll('.slide');
-const carouselTrack = document.querySelector('.slider__slides');
-const dotsList = document.querySelector('.slider__dots');
-
+let slides = document.querySelectorAll('.slide');
+let carouselTrack = document.querySelector('.slider__slides');
+let dotsList = document.querySelector('.slider__dots');
 let activeSlideIndex = 0;
 
 const updateInd = () => {
@@ -62,22 +62,39 @@ const updateInd = () => {
     })
 }
 
+const generateInd = () => {
+    for (let i = 0; i < slides.length; i++) {
+        let newItem = document.createElement('li');
+        newItem.classList.add('dot');
+        newItem.setAttribute('data-index', i);
+        dotsList.appendChild(newItem);
+    }
+    updateInd();
+}
+let imgWidth = slides[activeSlideIndex].clientWidth;
+
 const moveSlide = dir => {
-    let imgWidth = slides[activeSlideIndex].clientWidth;
-    if (dir === "prev") {
+    if (dir === 'prev') {
         if (activeSlideIndex > 0) {
             activeSlideIndex--;
         } else {
             activeSlideIndex = slides.length - 1;
         }
-    } else if (dir === "next") {
+    } else if (dir === 'next') {
         if (activeSlideIndex < slides.length - 1) {
-            activeSlideIndex++;
+            activeSlideIndex++
         } else {
             activeSlideIndex = 0;
         }
     }
-    carouselTrack.style.transform = `translateX(-${activeSlideIndex * imgWidth}px)`;
+
+    carouselTrack.scroll({
+        left: activeSlideIndex * imgWidth,
+        behavior: 'smooth',
+    });
+
+    // carouselTrack.style.transform = `translateX(-${activeSlideIndex * imgWidth}px)`;
+
     updateInd();
 }
 
@@ -95,27 +112,19 @@ const moveSlides = idx => {
     }
 }
 
-const generateInd = () => {
-    for (let i = 0; i < slides.length; i++) {
-        let newItem = document.createElement('li');
-        newItem.classList.add('dot');
-        newItem.setAttribute('data-index', i);
-        dotsList.appendChild(newItem);
-    }
-    updateInd();
-}
-
 dotsList.addEventListener('click', e => {
     let target = e.target;
     if (target.classList.contains('dot')) {
-        console.log(target.dataset.index);
         moveSlides(target.dataset.index);
     }
 })
 
-generateInd();
-
-
+// carouselTrack.addEventListener('scroll', function () {
+//     console.log('scroll');
+//     let el = document.querySelector('.active')
+//     el.classList.remove("active");
+//     updateInd();
+// })
 
 
 
@@ -133,3 +142,20 @@ function checkInput() {
 
 checkInput();
 
+let but = document.querySelector('.scroll-top')
+
+window.onscroll = () => {
+    if (window.scrollY >= 60 || window.pageYOffset >= 60) {
+        but.classList.remove('hide');
+        console.log('scroll');
+    }
+    else {
+        but.classList.add('hide');
+    }
+}
+
+but.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0
+    });
+})

@@ -928,4 +928,30 @@ p.sub-text {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
+
+.scroll-top {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  bottom: 30px;
+  right: 30px;
+  border-top: #58595B 1px solid;
+  border-left: #58595B 1px solid;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.scroll-top:hover {
+  -webkit-transform: scale(1.1) rotate(45deg);
+          transform: scale(1.1) rotate(45deg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.scroll-top.hide {
+  bottom: -30px;
+}
 /*# sourceMappingURL=style.css.map */
