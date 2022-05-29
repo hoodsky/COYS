@@ -147,7 +147,7 @@ let but = document.querySelector('.scroll-top')
 window.onscroll = () => {
     if (window.scrollY >= 60 || window.pageYOffset >= 60) {
         but.classList.remove('hide');
-        console.log('scroll');
+        // console.log('scroll');
     }
     else {
         but.classList.add('hide');

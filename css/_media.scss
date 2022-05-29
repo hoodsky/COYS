@@ -1,0 +1,41 @@
+@media (max-width: 48rem) {
+    .relevant {
+        flex-wrap: wrap;
+
+        .relevant__link {
+            flex: 1 1 50vw;
+        }
+    }
+
+    .individual-order {
+        padding: 0 10px;
+
+        &__title {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 26.625rem) {
+    .gender-section {
+        flex-wrap: wrap;
+
+        .gender {
+            width: 100vw;
+        }
+    }
+
+    .slider {
+        &__slides {
+            .slide {
+                width: 100vw;
+            }
+        }
+    }
+
+    .relevant {
+        .relevant__link {
+            flex: 1 1 100vw;
+        }
+    }
+}

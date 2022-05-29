@@ -170,8 +170,8 @@ h1 {
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 800;
-    font-size: rem(64);
-    line-height: rem(86);
+    @include adaptiv-value('font-size', 64, 30, 0);
+    @include adaptiv-value('line-height', 86, 36.75, 0);
 }
 
 h2 {
@@ -180,8 +180,10 @@ h2 {
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 300;
-    font-size: rem(48);
-    line-height: rem(60);
+    @include adaptiv-value('font-size', 48, 18, 0);
+    @include adaptiv-value('line-height', 60, 21, 0);
+    // font-size: rem(48);
+    // line-height: rem(60);
 }
 
 h3 {
@@ -214,8 +216,8 @@ h5 {
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 300;
-    font-size: rem(18);
-    line-height: rem(30);
+    @include adaptiv-value('font-size', 18, 12, 0);
+    @include adaptiv-value('line-height', 30, 18, 0);
 }
 
 p {
@@ -227,7 +229,8 @@ p {
 }
 
 p.big-text {
-    font-size: rem(17);
+    @include adaptiv-value('font-size', 17, 11, 0);
+    @include adaptiv-value('line-height', 24, 18, 0);
 }
 
 p.sub-text {

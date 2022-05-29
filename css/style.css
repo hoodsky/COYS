@@ -159,8 +159,8 @@ h1 {
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 800;
-  font-size: 4rem;
-  line-height: 5.375rem;
+  font-size: calc(1.875rem + 2.125 * ((100vw - 20rem) / 100));
+  line-height: calc(2.29688rem + 3.07812 * ((100vw - 20rem) / 100));
 }
 
 h2 {
@@ -168,8 +168,8 @@ h2 {
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 300;
-  font-size: 3rem;
-  line-height: 3.75rem;
+  font-size: calc(1.125rem + 1.875 * ((100vw - 20rem) / 100));
+  line-height: calc(1.3125rem + 2.4375 * ((100vw - 20rem) / 100));
 }
 
 h3 {
@@ -199,8 +199,8 @@ h5 {
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 300;
-  font-size: 1.125rem;
-  line-height: 1.875rem;
+  font-size: calc(0.75rem + 0.375 * ((100vw - 20rem) / 100));
+  line-height: calc(1.125rem + 0.75 * ((100vw - 20rem) / 100));
 }
 
 p {
@@ -212,7 +212,8 @@ p {
 }
 
 p.big-text {
-  font-size: 1.0625rem;
+  font-size: calc(0.6875rem + 0.375 * ((100vw - 20rem) / 100));
+  line-height: calc(1.125rem + 0.375 * ((100vw - 20rem) / 100));
 }
 
 p.sub-text {
@@ -565,7 +566,11 @@ p.sub-text {
 .slider__subtitle {
   background-color: #fff;
   max-width: 23rem;
-  padding: 30px;
+  max-width: calc(15.375rem + 7.625 * ((100vw - 20rem) / 100));
+  padding: 30px 0;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  margin: auto 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -575,9 +580,22 @@ p.sub-text {
   text-align: center;
 }
 
-.sliderspan {
+@media (max-width: 75rem) {
+  .slider__subtitle {
+    padding-left: calc(0.625rem + 1.25 * ((100vw - 20rem) / 55));
+  }
+}
+
+@media (max-width: 75rem) {
+  .slider__subtitle {
+    padding-right: calc(0.625rem + 1.25 * ((100vw - 20rem) / 55));
+  }
+}
+
+.slider__subtitle span {
   font-family: 'Gilroy';
-  line-height: 1.5rem;
+  font-size: calc(0.875rem + 0.625 * ((100vw - 20rem) / 100));
+  line-height: calc(1.0625rem + 0.75 * ((100vw - 20rem) / 100));
 }
 
 .gender-section {
@@ -661,6 +679,12 @@ p.sub-text {
   transition: all 1s ease;
 }
 
+@media (max-width: 75rem) {
+  .gender-section .gender span {
+    font-size: calc(1.125rem + 0.375 * ((100vw - 20rem) / 55));
+  }
+}
+
 .gender-section .gender span::before {
   content: '';
   position: absolute;
@@ -733,39 +757,26 @@ p.sub-text {
       flex-wrap: wrap;
 }
 
-.individual-order__content label p {
-  margin-bottom: 20px;
-}
-
-.individual-order__text {
+.individual-order__content label {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
-          flex: 1 1 30%;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
 }
 
-.individual-order label {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
-          flex: 1 1 30%;
-}
-
-.individual-order label form {
+.individual-order__content label form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
-          flex: 1 1 30%;
   position: relative;
 }
 
-.individual-order label form span {
+.individual-order__content label form span {
   position: absolute;
   left: 1rem;
   top: 1.0625rem;
 }
 
-.individual-order label form .telnumber {
+.individual-order__content label form .telnumber {
   background: #EFEDE9;
   border: 1px solid #DFDBD4;
   font-family: 'Roboto Condensed';
@@ -775,14 +786,10 @@ p.sub-text {
   line-height: 1.5rem;
   letter-spacing: 0.1em;
   color: #1a1a1a;
-  padding: 1rem;
-  padding-left: 3.125rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 70%;
-          flex: 1 1 70%;
+  padding: 1rem 0 1rem 3.125rem;
 }
 
-.individual-order label form .telsubmit {
+.individual-order__content label form .telsubmit {
   background: #F0DED0;
   border: none;
   font-family: 'Gilroy';
@@ -792,32 +799,48 @@ p.sub-text {
   line-height: 1.125rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  padding: 1.1875rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
-          flex: 1 1 30%;
+  padding: 1rem;
   cursor: pointer;
   -webkit-transition: .3s all;
   transition: .3s all;
 }
 
-.individual-order label form .telsubmit:hover {
+.individual-order__content label form .telsubmit:hover {
   background: #E4C5AD;
   -webkit-transition: .3s all;
   transition: .3s all;
 }
 
-.individual-order label form .telsubmit:active {
+.individual-order__content label form .telsubmit:active {
   background: #D3A785;
   -webkit-transition: .3s all;
   transition: .3s all;
 }
 
-.individual-order label form .telsubmit:disabled {
+.individual-order__content label form .telsubmit:disabled {
   cursor: auto;
   background: #D5CFC5;
   -webkit-transition: .3s all;
   transition: .3s all;
+}
+
+.individual-order__content label p {
+  margin-bottom: 20px;
+}
+
+.individual-order__logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.individual-order__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
 }
 
 .relevant {
@@ -940,18 +963,55 @@ p.sub-text {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   cursor: pointer;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: 10;
 }
 
 .scroll-top:hover {
-  -webkit-transform: scale(1.1) rotate(45deg);
-          transform: scale(1.1) rotate(45deg);
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transform: scale(1.3) rotate(45deg);
+          transform: scale(1.3) rotate(45deg);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .scroll-top.hide {
   bottom: -30px;
+}
+
+@media (max-width: 48rem) {
+  .relevant {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .relevant .relevant__link {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50vw;
+            flex: 1 1 50vw;
+  }
+  .individual-order {
+    padding: 0 10px;
+  }
+  .individual-order__title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 26.625rem) {
+  .gender-section {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .gender-section .gender {
+    width: 100vw;
+  }
+  .slider__slides .slide {
+    width: 100vw;
+  }
+  .relevant .relevant__link {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100vw;
+            flex: 1 1 100vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */

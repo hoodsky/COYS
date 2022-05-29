@@ -11,39 +11,40 @@
 }
 
 //EM
+
 @function em($px) {
     $result: ($px/16)+rem;
     @return $result;
 }
 
 // адаптивное свойство
-$maxWidth: 1920; //максимальный размер экрана
-$maxWidthContainer: 1200; //максимальный размер контейнера
+$maxWidth: 1920 / 16; //максимальный размер экрана (px)
+$maxWidthContainer: 1200 / 16; //максимальный размер контейнера (px)
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
-    $addSize: $startSize - $minSize;
+    $addSize: ($startSize / 16)- ($minSize / 16);
 
     @if $type==1 {
         //Только если меньше контейнера
-        #{$property}: $startSize + px;
+        #{$property}: ($startSize / 16) + rem;
 
-        @media (max-width: #{$maxWidthContainer + px}) {
-            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        @media (max-width: #{$maxWidthContainer + rem}) {
+            #{$property}: calc(#{($minSize / 16) + rem} + #{$addSize} * ((100vw - 20rem) / #{$maxWidthContainer - 20}));
         }
     }
 
     @else if $type==2 {
         //Только если больше контейнера
-        #{$property}: $startSize + px;
+        #{$property}: ($startSize / 16) + rem;
 
-        @media (min-width: #{$maxWidthContainer + px}) {
-            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        @media (min-width: #{$maxWidthContainer + rem}) {
+            #{$property}: calc(#{($minSize / 16) + rem} + #{$addSize} * ((100vw - 20rem) / #{$maxWidth - 20}));
         }
     }
 
     @else {
         //Всегда
-        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        #{$property}: calc(#{($minSize / 16 ) + rem} + #{$addSize} * ((100vw - 20rem) / #{$maxWidth - 20}));
     }
 }
 
@@ -266,23 +267,30 @@ $maxWidthContainer: 1200; //максимальный размер контейн
     &__subtitle {
         background-color: #fff;
         max-width: rem(368);
-        padding: 30px;
+        @include adaptiv-value("max-width", 368, 246, 0);
+        // min-width: rem(246);
+        padding: 30px 0;
+        @include adaptiv-value("padding-left", 30, 10, 1);
+        @include adaptiv-value("padding-right", 30, 10, 1);
+        margin: auto 40px;
         display: flex;
         align-items: center;
         text-align: center;
+
+        span {
+            font-family: 'Gilroy';
+            @include adaptiv-value('font-size', 24, 14, 0);
+            @include adaptiv-value('line-height', 29, 17, 0);
+        }
     }
 
-    &span {
-        font-family: 'Gilroy';
-        line-height: rem(24);
 
-
-    }
 }
 
 .gender-section {
     display: flex;
     margin-bottom: 95px;
+
 
     .gender {
         height: 80vh;
@@ -334,7 +342,8 @@ $maxWidthContainer: 1200; //максимальный размер контейн
             font-family: 'Gilroy';
             font-style: normal;
             font-weight: 300;
-            font-size: rem(24);
+            // font-size: rem(24);
+            @include adaptiv-value('font-size', 24, 18, 1);
             line-height: rem(18);
             letter-spacing: 0.3em;
             text-transform: uppercase;
@@ -405,78 +414,85 @@ $maxWidthContainer: 1200; //максимальный размер контейн
         margin-top: 53px;
         gap: 50px;
         flex-wrap: wrap;
+        // justify-content: center;
+
+        label {
+            flex: 1 1 33%;
+            // margin: 0 30px;
+            // width: 280px;
+
+            form {
+                display: flex;
+                position: relative;
+
+                span {
+                    position: absolute;
+                    left: rem(16);
+                    top: rem(17);
+                }
+
+                .telnumber {
+                    background: #EFEDE9;
+                    border: 1px solid #DFDBD4;
+                    font-family: 'Roboto Condensed';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: rem(16);
+                    line-height: rem(24);
+                    letter-spacing: 0.1em;
+                    color: #1a1a1a;
+                    padding: rem(16) 0 rem(16) rem(50);
+                }
+
+                .telsubmit {
+                    background: #F0DED0;
+                    border: none;
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: rem(14);
+                    line-height: rem(18);
+                    letter-spacing: 0.3em;
+                    text-transform: uppercase;
+                    padding: rem(16);
+                    cursor: pointer;
+                    transition: .3s all;
+
+                    &:hover {
+                        background: #E4C5AD;
+                        transition: .3s all;
+                    }
+
+                    &:active {
+                        background: #D3A785;
+                        transition: .3s all;
+                    }
+
+                    &:disabled {
+                        cursor: auto;
+                        background: #D5CFC5;
+                        transition: .3s all;
+                    }
+                }
+            }
+        }
 
         label p {
             margin-bottom: 20px;
         }
     }
 
+    &__logo {
+        flex: 1 1 33%;
+        // display: flex;
+        justify-content: center;
+    }
+
     &__text {
-        flex: 1 1 30%;
+        flex: 1 1 33%;
     }
 
-    label {
-        flex: 1 1 30%;
 
-        form {
-            display: flex;
-            flex: 1 1 30%;
-            position: relative;
-
-            span {
-                position: absolute;
-                left: rem(16);
-                top: rem(17);
-            }
-
-            .telnumber {
-                background: #EFEDE9;
-                border: 1px solid #DFDBD4;
-                font-family: 'Roboto Condensed';
-                font-style: normal;
-                font-weight: 300;
-                font-size: rem(16);
-                line-height: rem(24);
-                letter-spacing: 0.1em;
-                color: #1a1a1a;
-                padding: rem(16);
-                padding-left: rem(50);
-                flex: 1 1 70%;
-            }
-
-            .telsubmit {
-                background: #F0DED0;
-                border: none;
-                font-family: 'Gilroy';
-                font-style: normal;
-                font-weight: 300;
-                font-size: rem(14);
-                line-height: rem(18);
-                letter-spacing: 0.3em;
-                text-transform: uppercase;
-                padding: rem(19);
-                flex: 1 1 30%;
-                cursor: pointer;
-                transition: .3s all;
-
-                &:hover {
-                    background: #E4C5AD;
-                    transition: .3s all;
-                }
-
-                &:active {
-                    background: #D3A785;
-                    transition: .3s all;
-                }
-
-                &:disabled {
-                    cursor: auto;
-                    background: #D5CFC5;
-                    transition: .3s all;
-                }
-            }
-        }
-    }
 }
 
 .relevant {
@@ -595,14 +611,17 @@ $maxWidthContainer: 1200; //максимальный размер контейн
     border-left: $font-color 1px solid;
     transform: rotate(45deg);
     cursor: pointer;
-    transition: all .3s;
+    transition: all .3s ease;
+    z-index: 10;
 
     &:hover {
-        transform: scale(1.1) rotate(45deg);
-        transition: all .3s;
+        transform: scale(1.3) rotate(45deg);
+        transition: all .3s ease;
     }
 
     &.hide {
         bottom: -30px;
     }
 }
+
+@import 'media';
