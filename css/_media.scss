@@ -1,9 +1,29 @@
-@media (max-width: 48rem) {
+@media (max-width: rem(1024)) {
+    .individual-order {
+        &__content {
+            label {
+                flex: 1 1 50%;
+            }
+        }
+    }
+
+    .header {
+        &__lang {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        &__links {}
+    }
+}
+
+@media (max-width: rem(768)) {
+
     .relevant {
         flex-wrap: wrap;
 
         .relevant__link {
-            flex: 1 1 50vw;
+            flex: 1 1 50%;
         }
     }
 
@@ -13,12 +33,49 @@
         &__title {
             text-align: center;
         }
+    }
 
-        &__logo {}
+    .header {
+        &__logo {
+            margin-left: rem(33);
+
+            img {
+                height: 23px;
+            }
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        &__icons {
+            display: flex;
+            gap: 20px;
+            right: 25px;
+            align-items: center;
+
+            .search-icon,
+            .bascet-icon {}
+        }
+
+        &__nav,
+        &__links,
+        &__lang {
+            display: none;
+        }
+    }
+
+    .main {
+        margin-top: 75px;
+    }
+
+    .scroll-top {
+        width: 32px;
+        height: 32px;
     }
 }
 
-@media (max-width: 26.625rem) {
+@media (max-width: rem(426)) {
     .gender-section {
         flex-wrap: wrap;
 
@@ -37,7 +94,34 @@
 
     .relevant {
         .relevant__link {
-            flex: 1 1 100vw;
+            flex: 1 1 100%;
+        }
+    }
+
+    .individual-order {
+        &__logo {
+            flex: 1 1 50%;
+        }
+
+        &__content {
+            label p {
+                text-align: center;
+            }
+        }
+
+        &__text {
+            order: -1;
+        }
+    }
+
+    .footer {
+
+        margin: 20px 20px 0 20px;
+
+        &__nav {
+            ul li {
+                flex: 1 1 33%;
+            }
         }
     }
 }

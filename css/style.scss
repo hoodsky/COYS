@@ -230,13 +230,14 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         position: absolute;
         display: flex;
         justify-content: center;
-        gap: 33px;
-        bottom: 100px;
+        @include adaptiv-value ('gap', 33, 10, 1);
+        @include adaptiv-value ('bottom', 100, 20, 1);
         list-style: none;
 
         .dot {
-            width: 16px;
-            height: 16px;
+            @include adaptiv-value ('width', 16, 7, 1);
+            @include adaptiv-value ('height', 16, 7, 1);
+
             border-radius: 50%;
             border: 1px solid #fff;
             cursor: pointer;
@@ -415,6 +416,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         gap: 50px;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
 
         label {
             flex: 1 1 30%;
@@ -486,13 +488,15 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
     }
 
     &__logo {
-        flex: 1 1 8.33%;
+        flex: 1 1 8%;
         display: flex;
         justify-content: center;
+
     }
 
     &__text {
-        flex: 1 1 50%;
+        flex: 1 1 45%;
+
     }
 
 

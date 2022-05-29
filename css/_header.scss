@@ -3,19 +3,64 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     background-color: #fff;
     width: calc(100% - 48px);
     z-index: 10;
 
-    a {
-        display: block;
+    .hamburger {
+        display: none;
+        position: absolute;
 
+        &__icon {
+            // border: 1px solid black;
+            width: rem(18);
+            height: rem(12);
+            transition: all .5s ease-in-out;
+            cursor: pointer;
+
+            span {
+                display: block;
+                height: rem(2);
+                width: 100%;
+                background-color: rgba(218, 218, 218, 1);
+                border-radius: rem(2);
+                transition: all .5s ease-in-out;
+
+                &:not(:last-child) {
+                    margin-bottom: rem(3);
+                }
+            }
+
+            &.active {
+                transition-delay: 1s;
+                transform: rotate(45deg);
+
+                >span:nth-child(1) {
+                    transform: translateY(22px);
+                    transition-delay: .5s;
+                }
+
+                >span:nth-child(2) {
+                    transform: scale(0);
+                }
+
+                >span:nth-child(3) {
+                    transform: rotate(-90deg) translateX(22px);
+                    transition-delay: .5s;
+                }
+            }
+        }
     }
+
+
+
 
     &__nav ul {
         display: flex;
-        gap: rem(25);
+        // gap: rem(25);
+        @include adaptiv-value ('column-gap', 25, 1, 0);
 
         li {
             display: block;
@@ -23,17 +68,51 @@
         }
     }
 
+    .header-right {
+        display: flex;
+        gap: 25px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        a {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    &__lang {
+        display: flex;
+        @include adaptiv-value ('gap', 10, 1, 0);
+        align-items: center;
+
+    }
+
     &__links {
         display: flex;
-        gap: rem(25);
 
-        .lang {
-            display: flex;
-            gap: rem(10);
-        }
+        // gap: rem(25);
+
+        @include adaptiv-value (column-gap, 25, 1, 0);
+
     }
 
     &__search {
         display: none;
     }
+
+
 }
