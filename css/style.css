@@ -755,12 +755,15 @@ p.sub-text {
   gap: 50px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .individual-order__content label {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 33%;
-          flex: 1 1 33%;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
 }
 
 .individual-order__content label form {
@@ -777,6 +780,7 @@ p.sub-text {
 }
 
 .individual-order__content label form .telnumber {
+  display: block;
   background: #EFEDE9;
   border: 1px solid #DFDBD4;
   font-family: 'Roboto Condensed';
@@ -787,9 +791,11 @@ p.sub-text {
   letter-spacing: 0.1em;
   color: #1a1a1a;
   padding: 1rem 0 1rem 3.125rem;
+  width: 100%;
 }
 
 .individual-order__content label form .telsubmit {
+  display: block;
   background: #F0DED0;
   border: none;
   font-family: 'Gilroy';
@@ -830,8 +836,11 @@ p.sub-text {
 
 .individual-order__logo {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 33%;
-          flex: 1 1 33%;
+      -ms-flex: 1 1 8.33%;
+          flex: 1 1 8.33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -839,8 +848,8 @@ p.sub-text {
 
 .individual-order__text {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 33%;
-          flex: 1 1 33%;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
 }
 
 .relevant {

@@ -414,10 +414,10 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         margin-top: 53px;
         gap: 50px;
         flex-wrap: wrap;
-        // justify-content: center;
+        justify-content: center;
 
         label {
-            flex: 1 1 33%;
+            flex: 1 1 30%;
             // margin: 0 30px;
             // width: 280px;
 
@@ -432,6 +432,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
                 }
 
                 .telnumber {
+                    display: block;
                     background: #EFEDE9;
                     border: 1px solid #DFDBD4;
                     font-family: 'Roboto Condensed';
@@ -442,9 +443,11 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
                     letter-spacing: 0.1em;
                     color: #1a1a1a;
                     padding: rem(16) 0 rem(16) rem(50);
+                    width: 100%;
                 }
 
                 .telsubmit {
+                    display: block;
                     background: #F0DED0;
                     border: none;
                     font-family: 'Gilroy';
@@ -483,13 +486,13 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
     }
 
     &__logo {
-        flex: 1 1 33%;
-        // display: flex;
+        flex: 1 1 8.33%;
+        display: flex;
         justify-content: center;
     }
 
     &__text {
-        flex: 1 1 33%;
+        flex: 1 1 50%;
     }
 
 
