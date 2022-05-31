@@ -14,9 +14,10 @@
         position: absolute;
 
         &__icon {
+            z-index: 999;
             // border: 1px solid black;
-            width: rem(18);
-            height: rem(12);
+            width: rem(32);
+            height: rem(23);
             transition: all .5s ease-in-out;
             cursor: pointer;
 
@@ -24,21 +25,21 @@
                 display: block;
                 height: rem(2);
                 width: 100%;
-                background-color: rgba(218, 218, 218, 1);
+                background-color: $font-color;
                 border-radius: rem(2);
                 transition: all .5s ease-in-out;
 
                 &:not(:last-child) {
-                    margin-bottom: rem(3);
+                    margin-bottom: rem(9);
                 }
             }
 
             &.active {
-                transition-delay: 1s;
+                transition-delay: .5s;
                 transform: rotate(45deg);
 
                 >span:nth-child(1) {
-                    transform: translateY(22px);
+                    transform: translateY(rem(11));
                     transition-delay: .5s;
                 }
 
@@ -47,24 +48,72 @@
                 }
 
                 >span:nth-child(3) {
-                    transform: rotate(-90deg) translateX(22px);
+                    transform: rotate(-90deg) translateX(rem(11));
                     transition-delay: .5s;
                 }
             }
         }
+
+        &__links {
+            display: flex;
+            opacity: 0;
+            transform: scale(1);
+            transition-delay: .5s;
+            position: fixed;
+            left: 0;
+            top: rem(70);
+            right: 100vw;
+            bottom: 100vh;
+            background-color: #fff;
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all .5s;
+            pointer-events: none;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: rem(20);
+                font-size: rem(24);
+
+                li {
+                    display: block;
+                }
+            }
+
+            &.active {
+                display: flex;
+                opacity: 1;
+                transform: scale(1);
+                transition-delay: .5s;
+                position: fixed;
+                left: 0;
+                top: rem(70);
+                right: 0;
+                bottom: 0;
+                background-color: #fff;
+                z-index: 10;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                transition: all .5s;
+                pointer-events: all;
+            }
+        }
     }
 
+    &__nav {
+        ul {
+            display: flex;
+            // gap: rem(25);
+            @include adaptiv-value ('column-gap', 25, 1, 0);
 
+            li {
+                display: block;
 
-
-    &__nav ul {
-        display: flex;
-        // gap: rem(25);
-        @include adaptiv-value ('column-gap', 25, 1, 0);
-
-        li {
-            display: block;
-
+            }
         }
     }
 
@@ -103,9 +152,7 @@
 
     &__links {
         display: flex;
-
         // gap: rem(25);
-
         @include adaptiv-value (column-gap, 25, 1, 0);
 
     }

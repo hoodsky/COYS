@@ -37,13 +37,28 @@ includeHTML();
 
 window.onload = function () {
     document.body.classList.add('loaded_hiding');
-    generateInd();
 
     window.setTimeout(function () {
         document.body.classList.add('loaded');
         document.body.classList.remove('loaded_hiding');
     }, 500);
+
+    //hamburger menu
+    const hamburger = document.querySelector(".hamburger__icon");
+    const hamburgerLinks = document.querySelector(".hamburger__links");
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        hamburgerLinks.classList.toggle('active');
+    });
+
+    // Создание навигации на слайдере
+    generateInd();
+
 }
+
+
+
+
 
 //слайдер
 
