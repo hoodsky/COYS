@@ -1422,10 +1422,10 @@ p.sub-text {
   }
   .main {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
   }
   .main .slider {
-    scroll-snap-align: start;
+    scroll-snap-align: end;
     scroll-snap-stop: always;
   }
   .main .slider__slides .slide {
@@ -1448,8 +1448,6 @@ p.sub-text {
         flex-wrap: wrap;
     min-height: calc((var(--vh) * 100) - 70px);
     padding-top: 100px;
-    scroll-snap-align: end;
-    scroll-snap-stop: always;
   }
   .main .individual-order__logo {
     -webkit-box-flex: 1;

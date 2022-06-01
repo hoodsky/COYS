@@ -133,11 +133,12 @@
     }
 
     .main {
+        // scroll-snap-type: y mandatory;
         scroll-snap-align: start;
-        scroll-snap-stop: always;
+        scroll-snap-stop: normal;
 
         .slider {
-            scroll-snap-align: start;
+            scroll-snap-align: end;
             scroll-snap-stop: always;
 
             &__slides .slide {
@@ -162,8 +163,8 @@
             flex-wrap: wrap;
             min-height: calc((var(--vh) * 100) - 70px);
             padding-top: 100px;
-            scroll-snap-align: end;
-            scroll-snap-stop: always;
+            // scroll-snap-align: start;
+            // scroll-snap-stop: always;
 
             &__logo {
                 flex: 1 1 50%;
