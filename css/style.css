@@ -301,8 +301,8 @@ p.sub-text {
   display: -ms-flexbox;
   display: flex;
   opacity: 0;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
   position: fixed;
