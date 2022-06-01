@@ -196,32 +196,44 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         }
 
         .slide1 {
-            background: url('../img/slider/01.png') no-repeat center center;
+            background: no-repeat center center;
+            background-image: url('../img/slider/01.webp');
+            // background: url('../img/slider/01.png') no-repeat center center;
             background-size: cover;
         }
 
         .slide2 {
-            background: url('../img/slider/02.png') no-repeat center center;
+            background: no-repeat center center;
+            background-image: url('../img/slider/02.webp');
+            // background: url('../img/slider/02.webp') no-repeat center center;
             background-size: cover;
         }
 
         .slide3 {
-            background: url('../img/slider/03.png') no-repeat center center;
+            background: no-repeat center center;
+            background-image: url('../img/slider/03.webp');
+            // background: url('../img/slider/03.webp') no-repeat center center;
             background-size: cover;
         }
 
         .slide4 {
-            background: url('../img/slider/04.png') no-repeat center center;
+            background: no-repeat center center;
+            background-image: url('../img/slider/04.webp');
+            // background: url('../img/slider/04.webp') no-repeat center center;
             background-size: cover;
         }
 
         .slide5 {
-            background: url('../img/slider/05.png') no-repeat center center;
+            background: no-repeat center center;
+            background-image: url('../img/slider/05.webp');
+            // background: url('../img/slider/05.webp') no-repeat center center;
             background-size: cover;
         }
 
         .slide6 {
-            background: url('../img/slider/06.png') no-repeat center center;
+            background: no-repeat center center;
+            background-image: url('../img/slider/06.webp');
+            // background: url('../img/slider/06.webp') no-repeat center center;
             background-size: cover;
         }
     }
