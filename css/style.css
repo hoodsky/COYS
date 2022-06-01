@@ -669,37 +669,37 @@ p.sub-text {
 
 .slider__slides .slide1 {
   background: no-repeat center center;
-  background-image: url("../img/slider/01.webp");
+  background-image: url("../img/slider/01.avif");
   background-size: cover;
 }
 
 .slider__slides .slide2 {
   background: no-repeat center center;
-  background-image: url("../img/slider/02.webp");
+  background-image: url("../img/slider/02.avif");
   background-size: cover;
 }
 
 .slider__slides .slide3 {
   background: no-repeat center center;
-  background-image: url("../img/slider/03.webp");
+  background-image: url("../img/slider/03.avif");
   background-size: cover;
 }
 
 .slider__slides .slide4 {
   background: no-repeat center center;
-  background-image: url("../img/slider/04.webp");
+  background-image: url("../img/slider/04.avif");
   background-size: cover;
 }
 
 .slider__slides .slide5 {
   background: no-repeat center center;
-  background-image: url("../img/slider/05.webp");
+  background-image: url("../img/slider/05.avif");
   background-size: cover;
 }
 
 .slider__slides .slide6 {
   background: no-repeat center center;
-  background-image: url("../img/slider/06.webp");
+  background-image: url("../img/slider/06.avif");
   background-size: cover;
 }
 
