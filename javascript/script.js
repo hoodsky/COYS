@@ -53,14 +53,9 @@ window.onload = function () {
 
     // Создание навигации на слайдере
     generateInd();
-
 }
-
-
-
-
-
 //слайдер
+
 
 let slides = document.querySelectorAll('.slide');
 let carouselTrack = document.querySelector('.slider__slides');
