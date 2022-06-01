@@ -1420,9 +1420,13 @@ p.sub-text {
     top: -4px;
     width: calc(100vw - 175px);
   }
+  .main {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
   .main .slider {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
   }
   .main .slider__slides .slide {
     width: 100vw;
@@ -1436,7 +1440,7 @@ p.sub-text {
   .main .gender-section .gender {
     width: 100vw;
     scroll-snap-align: end;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
     min-height: calc((var(--vh) * 100) - 70px);
   }
   .main .individual-order {
@@ -1444,8 +1448,8 @@ p.sub-text {
         flex-wrap: wrap;
     min-height: calc((var(--vh) * 100) - 70px);
     padding-top: 100px;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-align: end;
+    scroll-snap-stop: normal;
   }
   .main .individual-order__logo {
     -webkit-box-flex: 1;
@@ -1463,14 +1467,14 @@ p.sub-text {
   .main .relevant .relevant__link {
     min-height: calc((var(--vh) * 100) - 70px);
     scroll-snap-align: end;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
   }
   .footer {
     scroll-snap-align: end;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
     margin: 20px 20px 0 20px;
   }
   .footer__nav ul li {
