@@ -169,3 +169,11 @@ but.addEventListener('click', () => {
         top: 0
     });
 })
+
+// Calculate 1vh value in pixels
+// based on window inner height
+var vh = window.innerHeight * 0.01;
+
+// Set the CSS variable to the root element
+// Which is equal to 1vh
+document.documentElement.style.setProperty('--vh', vh + 'px');

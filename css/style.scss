@@ -94,7 +94,8 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
 
 .main {
     flex: 1 1 auto;
-    margin-top: 90px;
+    margin-top: -90px;
+    padding-top: 90px;
 }
 
 .nav {
@@ -159,6 +160,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-top: 85px;
 
     &::before {
         position: absolute;

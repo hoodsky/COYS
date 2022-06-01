@@ -61,7 +61,7 @@
             transition-delay: .5s;
             position: fixed;
             left: 0;
-            top: rem(70);
+            top: 0;
             right: 100vw;
             bottom: 100vh;
             background-color: #fff;
@@ -71,6 +71,8 @@
             flex-direction: column;
             transition: all .5s;
             pointer-events: none;
+            overflow: scroll;
+            margin-top: 70px;
 
             ul {
                 display: flex;
@@ -90,7 +92,7 @@
                 transition-delay: .5s;
                 position: fixed;
                 left: 0;
-                top: rem(70);
+                top: 0;
                 right: 0;
                 bottom: 0;
                 background-color: #fff;
@@ -101,6 +103,14 @@
                 transition: all .5s;
                 pointer-events: all;
             }
+        }
+
+        &__lang {
+            display: flex;
+            gap: 5px;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
         }
     }
 
