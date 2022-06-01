@@ -1422,11 +1422,11 @@ p.sub-text {
   }
   .main {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
   }
   .main .slider {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
   }
   .main .slider__slides .slide {
     width: 100vw;
@@ -1440,7 +1440,7 @@ p.sub-text {
   .main .gender-section .gender {
     width: 100vw;
     scroll-snap-align: end;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
     min-height: calc((var(--vh) * 100) - 70px);
   }
   .main .individual-order {
@@ -1449,7 +1449,7 @@ p.sub-text {
     min-height: calc((var(--vh) * 100) - 70px);
     padding-top: 100px;
     scroll-snap-align: end;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
   }
   .main .individual-order__logo {
     -webkit-box-flex: 1;
@@ -1467,7 +1467,7 @@ p.sub-text {
   .main .relevant .relevant__link {
     min-height: calc((var(--vh) * 100) - 70px);
     scroll-snap-align: end;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
