@@ -1418,6 +1418,7 @@ p.sub-text {
   }
   .header__search.active {
     top: -4px;
+    width: calc(100vw - 175px);
   }
   .main .slider {
     scroll-snap-align: end;
