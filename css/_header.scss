@@ -56,7 +56,7 @@
 
         &__links {
             display: flex;
-            opacity: 0;
+            opacity: .5;
             transform: scale(0);
             transition-delay: .5s;
             position: fixed;
@@ -95,7 +95,13 @@
                 top: 0;
                 right: 0;
                 bottom: 0;
-                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.5);
+
+                @supports (-moz-appearance:none) {
+                    background-color: rgb(255, 255, 255);
+                }
+
+                backdrop-filter: blur(10px);
                 z-index: 10;
                 justify-content: center;
                 align-items: center;
@@ -129,6 +135,7 @@
 
     .header-right {
         display: flex;
+
         gap: 25px;
     }
 
@@ -151,6 +158,33 @@
         display: flex;
         gap: 20px;
         align-items: center;
+        position: relative;
+
+        .search-icon {
+            cursor: pointer;
+        }
+
+        .bascet-icon {
+            cursor: pointer;
+        }
+
+        .search-span {
+            opacity: 1;
+            display: block;
+            position: absolute;
+            width: 10px;
+            top: 17px;
+            right: 35px;
+            height: 1px;
+            background-color: #58595B;
+            transform: rotate(45deg);
+            transition: all .5s;
+
+            &.active {
+                opacity: 0;
+                transition: all .5s;
+            }
+        }
     }
 
     &__lang {
@@ -168,7 +202,35 @@
     }
 
     &__search {
-        display: none;
+        z-index: 1;
+        position: absolute;
+        right: 41px;
+        top: 4px;
+        // top: 0px;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        font-size: 0;
+        // opacity: 0;
+        border: 1px solid #58595B;
+        // width: 0px;
+        padding: 0;
+        pointer-events: none;
+        transition: all .5s;
+
+
+        &.active {
+            right: 74px;
+            opacity: 1;
+            @include adaptiv-value (width, 250, 120, 1);
+            font-size: rem(16);
+            border-radius: 3px;
+            height: 25px;
+            padding: 0 10px;
+            pointer-events: all;
+            transition: all .5s;
+            top: 0;
+        }
     }
 
 

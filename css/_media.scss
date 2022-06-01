@@ -13,7 +13,21 @@
             gap: 0;
         }
 
-        &__links {}
+        &__icons {
+            .search-span {
+                top: 28px;
+                right: 35px;
+            }
+        }
+
+        &__search {
+            right: 41px;
+            top: 16px;
+
+            &.active {
+                top: 12px;
+            }
+        }
     }
 }
 
@@ -51,17 +65,28 @@
         &__icons {
             display: flex;
             gap: 20px;
-            right: 25px;
             align-items: center;
 
-            .search-icon,
-            .bascet-icon {}
+            .search-span {
+                top: 12px;
+                right: 35px;
+            }
         }
+
 
         &__nav,
         &__links,
         &__lang {
             display: none;
+        }
+
+        &__search {
+            right: 41px;
+            top: 0px;
+
+            &.active {
+                top: -4px;
+            }
         }
     }
 
@@ -71,9 +96,12 @@
     }
 
     .scroll-top {
-        width: 32px;
-        height: 32px;
         bottom: 10px;
+
+        &::before {
+            width: 24px;
+            height: 24px;
+        }
     }
 }
 
@@ -84,6 +112,25 @@
         scroll-snap-type: y mandatory;
     }
 
+    .header {
+
+        &__logo {
+            opacity: 1;
+            transition: all .5s;
+
+            &.active {
+                opacity: 0;
+                transition: all .5s;
+            }
+        }
+
+        &__search {
+            &.active {
+                top: -4px;
+            }
+        }
+    }
+
     .main {
 
         .slider {
@@ -92,9 +139,8 @@
 
             &__slides .slide {
                 width: 100vw;
-                height: calc((var(--vh) * 100) - 70px);
+                min-height: calc((var(--vh) * 100) - 70px);
                 padding-top: 70px;
-
             }
         }
 
@@ -105,13 +151,13 @@
                 width: 100vw;
                 scroll-snap-align: end;
                 scroll-snap-stop: always;
-                height: calc((var(--vh) * 100) - 70px);
+                min-height: calc((var(--vh) * 100) - 70px);
             }
         }
 
         .individual-order {
             flex-wrap: wrap;
-            height: calc((var(--vh) * 100) - 70px);
+            min-height: calc((var(--vh) * 100) - 70px);
             padding-top: 100px;
             scroll-snap-align: start;
             scroll-snap-stop: always;
@@ -133,7 +179,7 @@
 
         .relevant {
             .relevant__link {
-                height: calc((var(--vh) * 100) - 70px);
+                min-height: calc((var(--vh) * 100) - 70px);
                 scroll-snap-align: end;
                 scroll-snap-stop: always;
                 flex: 1 1 100%;

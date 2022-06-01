@@ -191,7 +191,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
 
         .slide {
             width: 50vw;
-            height: 80vh;
+            min-height: 80vh;
             flex: 1 0 auto;
             scroll-snap-align: start;
             scroll-snap-stop: always;
@@ -308,7 +308,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
 
 
     .gender {
-        height: 80vh;
+        min-height: 80vh;
         width: 50vw;
         text-align: center;
         display: flex;
@@ -522,7 +522,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
 
     .relevant__link {
         width: 33.33vw;
-        height: 70vh;
+        min-height: 70vh;
         position: relative;
         overflow: hidden;
 
@@ -553,6 +553,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
                 font-style: normal;
                 font-weight: 300;
                 font-size: rem(30);
+                @include adaptiv-value('font-size', 30, 18, 1);
                 line-height: rem(60);
                 letter-spacing: 0.5em;
                 text-transform: uppercase;
@@ -624,19 +625,32 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
 
 .scroll-top {
     position: fixed;
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     bottom: 30px;
     right: 30px;
-    border-top: $font-color 1px solid;
-    border-left: $font-color 1px solid;
-    transform: rotate(45deg);
     cursor: pointer;
     transition: all .3s ease;
+    // border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
 
+    &::before {
+        content: '';
+        position: fixed;
+        width: 16px;
+        height: 16px;
+        border-top: $font-color 1px solid;
+        border-left: $font-color 1px solid;
+        transform: rotate(45deg);
+        transition: all .3s ease;
+        z-index: 10;
+    }
+
     &:hover {
-        transform: scale(1.3) rotate(45deg);
+        transform: scale(1.3);
         transition: all .3s ease;
     }
 

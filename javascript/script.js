@@ -43,17 +43,33 @@ window.onload = function () {
         document.body.classList.remove('loaded_hiding');
     }, 500);
 
-    //hamburger menu
-    const hamburger = document.querySelector(".hamburger__icon");
-    const hamburgerLinks = document.querySelector(".hamburger__links");
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        hamburgerLinks.classList.toggle('active');
-    });
-
     // Создание навигации на слайдере
     generateInd();
+
 }
+
+
+//hamburger menu
+let hamburger = document.querySelector(".hamburger__icon");
+let hamburgerLinks = document.querySelector(".hamburger__links");
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    hamburgerLinks.classList.toggle('active');
+});
+
+//поиск
+
+let searchIcon = document.querySelector('.search-icon');
+let searchInput = document.querySelector('.header__search');
+let searchSpan = document.querySelector('.search-span');
+let logo = document.querySelector('.header__logo');
+
+searchIcon.addEventListener('click', () => {
+    searchInput.classList.toggle('active');
+    searchSpan.classList.toggle('active');
+    logo.classList.toggle('active');
+});
+
 //слайдер
 
 
@@ -155,7 +171,7 @@ checkInput();
 let but = document.querySelector('.scroll-top')
 
 window.onscroll = () => {
-    if (window.scrollY >= 60 || window.pageYOffset >= 60) {
+    if (window.scrollY >= 200 || window.pageYOffset >= 200) {
         but.classList.remove('hide');
         // console.log('scroll');
     }
