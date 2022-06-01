@@ -135,7 +135,7 @@
     .main {
 
         .slider {
-            scroll-snap-align: end;
+            scroll-snap-align: start;
             scroll-snap-stop: always;
 
             &__slides .slide {
