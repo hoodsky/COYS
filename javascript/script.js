@@ -1,3 +1,5 @@
+"use strict";
+
 // скрипт для вставки шапки и подвала на страницу
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
@@ -71,12 +73,14 @@ searchIcon.addEventListener('click', () => {
 });
 
 //слайдер
-
-
 let slides = document.querySelectorAll('.slide');
 let carouselTrack = document.querySelector('.slider__slides');
 let dotsList = document.querySelector('.slider__dots');
 let activeSlideIndex = 0;
+let imgWidth = slides[activeSlideIndex].clientWidth;
+let pageSlides = Math.round((slides.length * imgWidth) / window.innerWidth);
+
+// console.log(pageSlides);
 
 const updateInd = () => {
     let dots = document.querySelectorAll('.dot');
@@ -86,44 +90,55 @@ const updateInd = () => {
             el.classList.add('active');
         }
     })
+};
+
+//удаление точек
+
+const deleteDots = () => {
+    dotsList.remove();
+    console.log(dotsList);
+    generateInd();
 }
 
+// создание точек
+
 const generateInd = () => {
-    for (let i = 0; i < slides.length; i++) {
+    for (let i = 0; i < pageSlides; i++) {
         let newItem = document.createElement('li');
         newItem.classList.add('dot');
         newItem.setAttribute('data-index', i);
         dotsList.appendChild(newItem);
+        updateInd();
     }
-    updateInd();
 }
-let imgWidth = slides[activeSlideIndex].clientWidth;
+
+// window.addEventListener('resize', deleteDots)
 
 const moveSlide = dir => {
     if (dir === 'prev') {
         if (activeSlideIndex > 0) {
             activeSlideIndex--;
         } else {
-            activeSlideIndex = slides.length - 1;
+            activeSlideIndex = pageSlides - 1;
         }
     } else if (dir === 'next') {
-        if (activeSlideIndex < slides.length - 1) {
+        if (activeSlideIndex < pageSlides - 1) {
             activeSlideIndex++
         } else {
             activeSlideIndex = 0;
         }
     }
 
+    // carouselTrack.style.transform = `translateX(-${activeSlideIndex * window.innerWidth
+    //     }px)`;
+
     carouselTrack.scroll({
-        left: activeSlideIndex * imgWidth,
+        left: activeSlideIndex * window.innerWidth,
         behavior: 'smooth',
     });
 
-    // carouselTrack.style.transform = `translateX(-${activeSlideIndex * imgWidth}px)`;
-
     updateInd();
 }
-
 const moveSlides = idx => {
     let diff = idx - activeSlideIndex;
     if (diff >= 0) {
@@ -133,27 +148,27 @@ const moveSlides = idx => {
     } else {
         diff *= -1;
         for (let i = 0; i < diff; i++) {
-            moveSlide("prev");
+            moveSlide();
         }
     }
 }
-
 dotsList.addEventListener('click', e => {
     let target = e.target;
     if (target.classList.contains('dot')) {
         moveSlides(target.dataset.index);
     }
-})
+});
 
-// carouselTrack.addEventListener('scroll', function () {
-//     console.log('scroll');
-//     let el = document.querySelector('.active')
-//     el.classList.remove("active");
-//     updateInd();
-// })
+//автопроигрывание слайдера
 
+let autoplayInterval = () => {
+    if (activeSlideIndex > 0 || activeSlideIndex <= pageSlides) {
+        moveSlide('next');
+        // console.log(activeSlideIndex);
+    }
+};
 
-
+setInterval(autoplayInterval, 5000);
 
 //проверка ввода текста для активации кнопки
 
