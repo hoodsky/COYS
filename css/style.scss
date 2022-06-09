@@ -177,24 +177,25 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        overflow-x: scroll;
+        overflow-x: hidden;
         overflow-y: hidden;
         transition: .5s;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        scrollbar-width: none;
+        // scroll-snap-type: x mandatory;
+        // -webkit-overflow-scrolling: touch;
+        // -ms-overflow-style: -ms-autohiding-scrollbar;
+        // scrollbar-width: none;
+        // transform: translateX(0);
 
-        &::-webkit-scrollbar {
-            display: none;
-        }
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
 
         .slide {
             width: 50vw;
             min-height: 80vh;
             flex: 1 0 auto;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
+            // scroll-snap-align: start;
+            // scroll-snap-stop: always;
         }
 
         .slide1 {
@@ -251,17 +252,22 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         .dot {
             @include adaptiv-value ('width', 16, 7, 1);
             @include adaptiv-value ('height', 16, 7, 1);
-
             border-radius: 50%;
             border: 1px solid #fff;
             cursor: pointer;
+            background: none;
+            opacity: .5;
+            transition: all 1s;
 
             &:hover {
                 background: rgba(255, 255, 255, 0.5);
             }
 
             &.active {
+
                 background: #fff;
+                opacity: 1;
+                transition: all 1s;
             }
         }
     }

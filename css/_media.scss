@@ -109,7 +109,7 @@
 
 
     html {
-        scroll-snap-type: y mandatory;
+        // scroll-snap-type: y mandatory;
     }
 
     .header {
@@ -134,12 +134,12 @@
 
     .main {
         // scroll-snap-type: y mandatory;
-        scroll-snap-align: start;
-        scroll-snap-stop: normal;
+        // scroll-snap-align: start;
+        // scroll-snap-stop: normal;
 
         .slider {
-            scroll-snap-align: end;
-            scroll-snap-stop: always;
+            // scroll-snap-align: end;
+            // scroll-snap-stop: always;
 
             &__slides .slide {
                 width: 100vw;
@@ -153,8 +153,8 @@
 
             .gender {
                 width: 100vw;
-                scroll-snap-align: end;
-                scroll-snap-stop: always;
+                // scroll-snap-align: end;
+                // scroll-snap-stop: always;
                 min-height: calc((var(--vh) * 100) - 70px);
             }
         }
@@ -184,8 +184,8 @@
         .relevant {
             .relevant__link {
                 min-height: calc((var(--vh) * 100) - 70px);
-                scroll-snap-align: end;
-                scroll-snap-stop: always;
+                // scroll-snap-align: end;
+                // scroll-snap-stop: always;
                 flex: 1 1 100%;
             }
         }

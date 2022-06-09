@@ -148,7 +148,7 @@ const moveSlides = idx => {
     } else {
         diff *= -1;
         for (let i = 0; i < diff; i++) {
-            moveSlide();
+            moveSlide('prev');
         }
     }
 }

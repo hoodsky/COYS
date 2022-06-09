@@ -726,19 +726,10 @@ p.sub-text {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   -webkit-transition: .5s;
   transition: .5s;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  scrollbar-width: none;
-}
-
-.slider__slides::-webkit-scrollbar {
-  display: none;
 }
 
 .slider__slides .slide {
@@ -747,8 +738,6 @@ p.sub-text {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .slider__slides .slide1 {
@@ -818,6 +807,10 @@ p.sub-text {
   border-radius: 50%;
   border: 1px solid #fff;
   cursor: pointer;
+  background: none;
+  opacity: .5;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 @media (max-width: 75rem) {
@@ -838,6 +831,9 @@ p.sub-text {
 
 .slider__dots .dot.active {
   background: #fff;
+  opacity: 1;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .slider__title-div {
@@ -1402,10 +1398,6 @@ p.sub-text {
 }
 
 @media (max-width: 26.625rem) {
-  html {
-    -ms-scroll-snap-type: y mandatory;
-        scroll-snap-type: y mandatory;
-  }
   .header__logo {
     opacity: 1;
     -webkit-transition: all .5s;
@@ -1420,14 +1412,6 @@ p.sub-text {
     top: -4px;
     width: calc(100vw - 175px);
   }
-  .main {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-  }
-  .main .slider {
-    scroll-snap-align: end;
-    scroll-snap-stop: always;
-  }
   .main .slider__slides .slide {
     width: 100vw;
     min-height: calc((var(--vh) * 100) - 70px);
@@ -1439,8 +1423,6 @@ p.sub-text {
   }
   .main .gender-section .gender {
     width: 100vw;
-    scroll-snap-align: end;
-    scroll-snap-stop: always;
     min-height: calc((var(--vh) * 100) - 70px);
   }
   .main .individual-order {
@@ -1464,8 +1446,6 @@ p.sub-text {
   }
   .main .relevant .relevant__link {
     min-height: calc((var(--vh) * 100) - 70px);
-    scroll-snap-align: end;
-    scroll-snap-stop: always;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
