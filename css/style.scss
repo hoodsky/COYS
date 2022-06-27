@@ -278,7 +278,7 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         flex-direction: column;
         align-items: center;
         gap: 35px;
-        pointer-events: none;
+        // pointer-events: none;
     }
 
     &__title {
@@ -289,7 +289,6 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         background-color: #fff;
         max-width: rem(368);
         @include adaptiv-value("max-width", 368, 246, 0);
-        // min-width: rem(246);
         padding: 30px 0;
         @include adaptiv-value("padding-left", 30, 10, 1);
         @include adaptiv-value("padding-right", 30, 10, 1);
@@ -304,8 +303,6 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
             @include adaptiv-value('line-height', 29, 17, 0);
         }
     }
-
-
 }
 
 .gender-section {
@@ -511,7 +508,6 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
         flex: 1 1 8%;
         display: flex;
         justify-content: center;
-
     }
 
     &__text {

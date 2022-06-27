@@ -73,7 +73,6 @@
             }
         }
 
-
         &__nav,
         &__links,
         &__lang {
@@ -93,6 +92,10 @@
     .main {
         margin-top: -70px;
         padding-top: 70px;
+
+        .slider {
+            margin-top: 70px;
+        }
     }
 
     .scroll-top {
@@ -105,13 +108,17 @@
     }
 }
 
-@media (max-width: rem(426)) {
-
-
-    html {
-        // scroll-snap-type: y mandatory;
+@media (orientation: landscape) and (max-width: rem(768)) {
+    .main {
+        .slider {
+            &__logo {
+                display: none;
+            }
+        }
     }
+}
 
+@media (max-width: rem(426)) {
     .header {
 
         &__logo {
@@ -133,18 +140,11 @@
     }
 
     .main {
-        // scroll-snap-type: y mandatory;
-        // scroll-snap-align: start;
-        // scroll-snap-stop: normal;
-
         .slider {
-            // scroll-snap-align: end;
-            // scroll-snap-stop: always;
 
             &__slides .slide {
                 width: 100vw;
                 min-height: calc((var(--vh) * 100) - 70px);
-                padding-top: 70px;
             }
         }
 
@@ -153,8 +153,6 @@
 
             .gender {
                 width: 100vw;
-                // scroll-snap-align: end;
-                // scroll-snap-stop: always;
                 min-height: calc((var(--vh) * 100) - 70px);
             }
         }
@@ -163,8 +161,6 @@
             flex-wrap: wrap;
             min-height: calc((var(--vh) * 100) - 70px);
             padding-top: 100px;
-            // scroll-snap-align: start;
-            // scroll-snap-stop: always;
 
             &__logo {
                 flex: 1 1 50%;
@@ -184,8 +180,6 @@
         .relevant {
             .relevant__link {
                 min-height: calc((var(--vh) * 100) - 70px);
-                // scroll-snap-align: end;
-                // scroll-snap-stop: always;
                 flex: 1 1 100%;
             }
         }

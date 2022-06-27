@@ -76,6 +76,7 @@ searchIcon.addEventListener('click', () => {
 let slides = document.querySelectorAll('.slide');
 let carouselTrack = document.querySelector('.slider__slides');
 let dotsList = document.querySelector('.slider__dots');
+let dots = document.querySelectorAll('.dot');
 let activeSlideIndex = 0;
 let imgWidth = slides[activeSlideIndex].clientWidth;
 let pageSlides = Math.round((slides.length * imgWidth) / window.innerWidth);
@@ -95,9 +96,9 @@ const updateInd = () => {
 //удаление точек
 
 const deleteDots = () => {
-    dotsList.remove();
-    console.log(dotsList);
-    generateInd();
+    dots.remove();
+    // console.log(dotsList);
+    // generateInd();
 }
 
 // создание точек
@@ -108,11 +109,12 @@ const generateInd = () => {
         newItem.classList.add('dot');
         newItem.setAttribute('data-index', i);
         dotsList.appendChild(newItem);
+        console.log('generate');
         updateInd();
     }
 }
 
-// window.addEventListener('resize', deleteDots)
+// window.addEventListener('resize', deleteDots);
 
 const moveSlide = dir => {
     if (dir === 'prev') {
@@ -169,6 +171,15 @@ let autoplayInterval = () => {
 };
 
 setInterval(autoplayInterval, 5000);
+
+// удаление и генерация точек при изменении размера страницы
+
+window.addEventListener('resize', () => {
+    console.log("delete");
+    deleteDots();
+    generateInd();
+})
+
 
 //проверка ввода текста для активации кнопки
 
