@@ -251,8 +251,8 @@ p.sub-text {
   z-index: 999;
   width: 2rem;
   height: 1.4375rem;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
 
@@ -262,8 +262,8 @@ p.sub-text {
   width: 100%;
   background-color: #58595B;
   border-radius: 0.125rem;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .header .hamburger__icon span:not(:last-child) {
@@ -271,8 +271,8 @@ p.sub-text {
 }
 
 .header .hamburger__icon.active {
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -280,8 +280,8 @@ p.sub-text {
 .header .hamburger__icon.active > span:nth-child(1) {
   -webkit-transform: translateY(0.6875rem);
           transform: translateY(0.6875rem);
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .header .hamburger__icon.active > span:nth-child(2) {
@@ -292,24 +292,22 @@ p.sub-text {
 .header .hamburger__icon.active > span:nth-child(3) {
   -webkit-transform: rotate(-90deg) translateX(0.6875rem);
           transform: rotate(-90deg) translateX(0.6875rem);
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .header .hamburger__links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  opacity: .5;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  opacity: 0;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
   position: fixed;
   left: 0;
   top: 0;
-  right: 100vw;
-  bottom: 100vh;
+  right: 0;
+  bottom: 0;
   background-color: #fff;
   z-index: 10;
   -webkit-box-pack: center;
@@ -322,8 +320,8 @@ p.sub-text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   pointer-events: none;
   overflow: scroll;
   margin-top: 70px;
@@ -352,14 +350,14 @@ p.sub-text {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   z-index: 10;
@@ -373,15 +371,9 @@ p.sub-text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   pointer-events: all;
-}
-
-@supports (-moz-appearance: none) {
-  .header .hamburger__links.active {
-    background-color: white;
-  }
 }
 
 .header .hamburger__lang {
@@ -459,17 +451,17 @@ p.sub-text {
   top: 17px;
   right: 35px;
   height: 1px;
-  background-color: #58595B;
+  background-color: #58595b;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .header__icons .search-span.active {
   opacity: 0;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .header__lang {
@@ -499,11 +491,11 @@ p.sub-text {
   width: 12px;
   border-radius: 50%;
   font-size: 0;
-  border: 1px solid #58595B;
+  border: 1px solid #58595b;
   padding: 0;
   pointer-events: none;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .header__search.active {
@@ -515,8 +507,8 @@ p.sub-text {
   height: 25px;
   padding: 0 10px;
   pointer-events: all;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   top: 0;
 }
 
