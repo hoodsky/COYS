@@ -1,5 +1,57 @@
 .catalog {
   display: flex;
-  &__filter {
+  flex-direction: row;
+  &__filter-nav {
+    flex: 1 1 auto;
+    max-width: rem(300);
+  }
+  &__content {
+    flex: 3 1 auto;
+  }
+  &__filter-category {
+    position: relative;
+    height: rem(48);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px $font-color solid;
+    border-bottom: 1px $font-color solid;
+    transition: 0.5s;
+    margin-bottom: -1px;
+
+    &:hover {
+      background-color: #eae6de;
+    }
+    p {
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 300;
+      font-size: rem(14);
+      line-height: rem(18);
+      text-align: center;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: $font-color;
+    }
+  }
+}
+.checked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.category-checkbox {
+  cursor: pointer;
+  // opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+
+  &:checked ~ .checked {
+    background-color: aqua;
   }
 }

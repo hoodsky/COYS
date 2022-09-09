@@ -21,7 +21,7 @@
 
     <div class="wrapper">
         <!-- <header class="header" w3-include-html="header.html">        </header> -->
-        <header class="header catalog">
+        <header class="header">
             <div class="hamburger">
                 <div class="hamburger__icon">
                     <span></span>
@@ -73,11 +73,66 @@
             </div>
         </header>
 
-        <main class="main">
-            <nav class="catalog__filter">
+        <main class="main catalog ">
+            <nav class="catalog__filter-nav">
+                <div class="catalog__filter-category">
+                    <label for="sale">
+                        <input id="sale" type="checkbox" class="category-checkbox">
+                        <p>SALE %</p>
+                        <div class="checked"></div>
 
+                    </label>
+                </div>
+                <div class="catalog__filter-category">
+                    <label for="">
+                        <input type="checkbox" class="category-checkbox">
+                        <p>new</p>
+                        <div class="checked"></div>
+
+                    </label>
+                </div>
+                <div class="catalog__filter-category">
+                    <label for="">
+                        <input type="checkbox" class="category-checkbox">
+                        <p>спеціальні пропозиції</p>
+                        <div class="checked"></div>
+
+                    </label>
+                </div>
+                <div class="catalog__filter-category">
+                    <label for="">
+                        <input type="checkbox" class="category-checkbox">
+                        <p>bestsellers</p>
+                        <div class="checked"></div>
+
+                    </label>
+                </div>
+                <div class="catalog__filter-category">
+                    <label for="">
+                        <input type="checkbox" class="category-checkbox">
+                        <p>весь одяг</p>
+                        <div class="checked"></div>
+                    </label>
+                </div>
+                <div class="catalog__filter-category">
+                    <label for="">
+                        <input type="checkbox" class="category-checkbox">
+                        <p>колір</p>
+                        <div class="checked"></div>
+
+                    </label>
+                </div>
+                <div class="catalog__filter-category">
+                    <label for="">
+                        <div class="checked"></div>
+                        <input type="checkbox" class="category-checkbox">
+                        <p>розмір</p>
+
+
+                    </label>
+                </div>
             </nav>
-
+            <div class="catalog__content"></div>
             <div class="scroll-top hide"></div>
         </main>
         <footer class="footer" w3-include-html="footer.html">

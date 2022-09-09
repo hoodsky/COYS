@@ -1,199 +1,196 @@
 @media (max-width: rem(1024)) {
-    .individual-order {
-        &__content {
-            label {
-                flex: 1 1 50%;
-            }
-        }
+  .individual-order {
+    &__content {
+      label {
+        flex: 1 1 50%;
+      }
+    }
+  }
+
+  .header {
+    &__lang {
+      flex-direction: column;
+      gap: 0;
     }
 
-    .header {
-        &__lang {
-            flex-direction: column;
-            gap: 0;
-        }
-
-        &__icons {
-            .search-span {
-                top: 28px;
-                right: 35px;
-            }
-        }
-
-        &__search {
-            right: 41px;
-            top: 16px;
-
-            &.active {
-                top: 12px;
-            }
-        }
+    &__icons {
+      .search-span {
+        top: 28px;
+        right: 35px;
+      }
     }
+
+    &__search {
+      right: 41px;
+      top: 16px;
+
+      &.active {
+        top: 12px;
+      }
+    }
+  }
 }
 
 @media (max-width: rem(768)) {
+  .relevant {
+    flex-wrap: wrap;
 
-    .relevant {
-        flex-wrap: wrap;
+    .relevant__link {
+      flex: 1 1 50%;
+    }
+  }
 
-        .relevant__link {
-            flex: 1 1 50%;
-        }
+  .individual-order {
+    padding: 0 10px;
+
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .header {
+    &__logo {
+      margin-left: rem(50);
+
+      img {
+        height: 23px;
+      }
     }
 
-    .individual-order {
-        padding: 0 10px;
-
-        &__title {
-            text-align: center;
-        }
+    .hamburger {
+      display: block;
     }
 
-    .header {
-        &__logo {
-            margin-left: rem(50);
+    &__icons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
 
-            img {
-                height: 23px;
-            }
-        }
-
-        .hamburger {
-            display: block;
-        }
-
-        &__icons {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-
-            .search-span {
-                top: 12px;
-                right: 35px;
-            }
-        }
-
-        &__nav,
-        &__links,
-        &__lang {
-            display: none;
-        }
-
-        &__search {
-            right: 41px;
-            top: 0px;
-
-            &.active {
-                top: -4px;
-            }
-        }
+      .search-span {
+        top: 12px;
+        right: 35px;
+      }
     }
 
-    .main {
-        margin-top: -70px;
-        padding-top: 70px;
-
-        .slider {
-            margin-top: 70px;
-        }
+    &__nav,
+    &__links,
+    &__lang {
+      display: none;
     }
 
-    .scroll-top {
-        bottom: 10px;
+    &__search {
+      right: 41px;
+      top: 0px;
 
-        &::before {
-            width: 24px;
-            height: 24px;
-        }
+      &.active {
+        top: -4px;
+      }
     }
+  }
+
+  .main {
+    margin-top: -70px;
+    padding-top: 140px;
+
+    .slider {
+      // margin-top: 70px;
+    }
+  }
+
+  .scroll-top {
+    bottom: 10px;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
 @media (orientation: landscape) and (max-width: rem(768)) {
-    .main {
-        .slider {
-            &__logo {
-                display: none;
-            }
-        }
+  .main {
+    .slider {
+      &__logo {
+        display: none;
+      }
     }
+  }
 }
 
 @media (max-width: rem(426)) {
-    .header {
+  .header {
+    &__logo {
+      opacity: 1;
+      transition: all 0.5s;
 
-        &__logo {
-            opacity: 1;
-            transition: all .5s;
-
-            &.active {
-                opacity: 0;
-                transition: all .5s;
-            }
-        }
-
-        &__search {
-            &.active {
-                top: -4px;
-                width: calc(100vw - 175px);
-            }
-        }
+      &.active {
+        opacity: 0;
+        transition: all 0.5s;
+      }
     }
 
-    .main {
-        .slider {
+    &__search {
+      &.active {
+        top: -4px;
+        width: calc(100vw - 175px);
+      }
+    }
+  }
 
-            &__slides .slide {
-                width: 100vw;
-                min-height: calc((var(--vh) * 100) - 70px);
-            }
-        }
-
-        .gender-section {
-            flex-wrap: wrap;
-
-            .gender {
-                width: 100vw;
-                min-height: calc((var(--vh) * 100) - 70px);
-            }
-        }
-
-        .individual-order {
-            flex-wrap: wrap;
-            min-height: calc((var(--vh) * 100) - 70px);
-            padding-top: 100px;
-
-            &__logo {
-                flex: 1 1 50%;
-            }
-
-            &__content {
-                label p {
-                    text-align: center;
-                }
-            }
-
-            &__text {
-                order: -1;
-            }
-        }
-
-        .relevant {
-            .relevant__link {
-                min-height: calc((var(--vh) * 100) - 70px);
-                flex: 1 1 100%;
-            }
-        }
+  .main {
+    .slider {
+      &__slides .slide {
+        width: 100vw;
+        min-height: calc((var(--vh) * 100) - 70px);
+      }
     }
 
-    .footer {
-        scroll-snap-align: end;
-        scroll-snap-stop: normal;
-        margin: 20px 20px 0 20px;
+    .gender-section {
+      flex-wrap: wrap;
 
-        &__nav {
-            ul li {
-                flex: 1 1 33%;
-            }
-        }
+      .gender {
+        width: 100vw;
+        min-height: calc((var(--vh) * 100) - 70px);
+      }
     }
+
+    .individual-order {
+      flex-wrap: wrap;
+      min-height: calc((var(--vh) * 100) - 70px);
+      padding-top: 100px;
+
+      &__logo {
+        flex: 1 1 50%;
+      }
+
+      &__content {
+        label p {
+          text-align: center;
+        }
+      }
+
+      &__text {
+        order: -1;
+      }
+    }
+
+    .relevant {
+      .relevant__link {
+        min-height: calc((var(--vh) * 100) - 70px);
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  .footer {
+    scroll-snap-align: end;
+    scroll-snap-stop: normal;
+    margin: 20px 20px 0 20px;
+
+    &__nav {
+      ul li {
+        flex: 1 1 33%;
+      }
+    }
+  }
 }
