@@ -835,17 +835,7 @@ p.sub-text {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-}
-
-.slider::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  content: '';
-  background-color: rgba(66, 41, 23, 0.3);
-  pointer-events: none;
+  overflow: hidden;
 }
 
 .slider__slides {
@@ -858,8 +848,9 @@ p.sub-text {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -870,6 +861,8 @@ p.sub-text {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
 }
 
 .slider__slides .slide1 {

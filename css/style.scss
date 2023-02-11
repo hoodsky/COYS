@@ -167,24 +167,27 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
   justify-content: center;
   position: relative;
   // margin-top: 85px;
+  overflow: hidden;
 
-  &::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    content: '';
-    background-color: rgba(66, 41, 23, 0.3);
-    pointer-events: none;
-  }
+  // &::before {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   content: '';
+  //   background-color: rgba(66, 41, 23, 0.3);
+  //   pointer-events: none;
+  // }
 
   &__slides {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    // overflow-x: hidden;
     transition: 0.5s;
     // scroll-snap-type: x mandatory;
     // -webkit-overflow-scrolling: touch;
@@ -193,13 +196,14 @@ $maxWidthContainer: 1200 / 16; //максимальный размер конт�
     // transform: translateX(0);
 
     // &::-webkit-scrollbar {
-    //     display: none;
+    // display: none;
     // }
 
     .slide {
       width: 50vw;
       min-height: 80vh;
       flex: 1 0 auto;
+      filter: brightness(0.8);
       // scroll-snap-align: start;
       // scroll-snap-stop: always;
     }

@@ -72,6 +72,10 @@ searchIcon.addEventListener('click', () => {
     logo.classList.toggle('active');
 });
 
+
+
+
+
 //слайдер
 let slides = document.querySelectorAll('.slide');
 let carouselTrack = document.querySelector('.slider__slides');
@@ -80,8 +84,6 @@ let dots = document.querySelectorAll('.dot');
 let activeSlideIndex = 0;
 let imgWidth = slides[activeSlideIndex].clientWidth;
 let pageSlides = Math.round((slides.length * imgWidth) / window.innerWidth);
-
-// console.log(pageSlides);
 
 const updateInd = () => {
     let dots = document.querySelectorAll('.dot');
@@ -93,13 +95,6 @@ const updateInd = () => {
     })
 };
 
-//удаление точек
-
-const deleteDots = () => {
-    dots.remove();
-    // console.log(dotsList);
-    // generateInd();
-}
 
 // создание точек
 
@@ -131,14 +126,8 @@ const moveSlide = dir => {
         }
     }
 
-    // carouselTrack.style.transform = `translateX(-${activeSlideIndex * window.innerWidth
-    //     }px)`;
-
-    carouselTrack.scroll({
-        left: activeSlideIndex * window.innerWidth,
-        behavior: 'smooth',
-    });
-
+    carouselTrack.style.transform = `translateX(-${activeSlideIndex * window.innerWidth
+        }px)`;
     updateInd();
 }
 const moveSlides = idx => {
@@ -166,20 +155,10 @@ dotsList.addEventListener('click', e => {
 let autoplayInterval = () => {
     if (activeSlideIndex > 0 || activeSlideIndex <= pageSlides) {
         moveSlide('next');
-        // console.log(activeSlideIndex);
     }
 };
 
 setInterval(autoplayInterval, 5000);
-
-// удаление и генерация точек при изменении размера страницы
-
-window.addEventListener('resize', () => {
-    console.log("delete");
-    deleteDots();
-    generateInd();
-})
-
 
 //проверка ввода текста для активации кнопки
 
