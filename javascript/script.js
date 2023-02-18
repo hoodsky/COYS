@@ -173,6 +173,8 @@ function checkInput() {
 
 checkInput();
 
+//появление кнопки scroll-top
+
 let but = document.querySelector('.scroll-top')
 
 window.onscroll = () => {
@@ -190,6 +192,20 @@ but.addEventListener('click', () => {
         top: 0
     });
 })
+
+const header = document.querySelector('.header');
+let windowPos = 0;
+window.addEventListener('scroll', () => {
+    if (window.scrollY > windowPos) {
+        windowPos = window.scrollY;
+        header.classList.add('hide')
+    }
+    else {
+        windowPos = window.scrollY;
+        header.classList.remove('hide')
+    }
+})
+
 
 // Calculate 1vh value in pixels
 // based on window inner height

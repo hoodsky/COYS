@@ -240,6 +240,13 @@ p.sub-text {
   background-color: #fff;
   width: calc(100% - 48px);
   z-index: 10;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  top: 0px;
+}
+
+.header.hide {
+  top: -100px;
 }
 
 .header .hamburger {
@@ -750,8 +757,8 @@ p.sub-text {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  margin-top: -96px;
-  padding-top: 192px;
+  margin-top: -86px;
+  padding-top: 172px;
 }
 
 .nav {

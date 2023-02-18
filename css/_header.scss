@@ -8,7 +8,13 @@
   background-color: #fff;
   width: calc(100% - 48px);
   z-index: 10;
+  transition: 0.3s;
+  top: 0px;
 
+  &.hide {
+    // opacity: 0;
+    top: -100px;
+  }
   .hamburger {
     display: none;
     position: absolute;
