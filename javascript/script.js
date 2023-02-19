@@ -57,6 +57,7 @@ let hamburgerLinks = document.querySelector(".hamburger__links");
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     hamburgerLinks.classList.toggle('active');
+    document.body.classList.toggle('notscroll')
 });
 
 //поиск
@@ -205,7 +206,6 @@ window.addEventListener('scroll', () => {
         header.classList.remove('hide')
     }
 })
-
 
 // Calculate 1vh value in pixels
 // based on window inner height

@@ -81,12 +81,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -101,139 +101,141 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 //reset CSS
 
-$font-color: #58595B;
+$font-color: #58595b;
 
 body,
 html {
-    height: 100%;
-    margin: 0;
-    color: $font-color;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    font-weight: 300;
-    font-size: rem(16);
-    line-height: rem(24);
-    scroll-behavior: smooth;
-
-    // &::-webkit-scrollbar {
-    //     display: none;
-    // }
+  height: 100%;
+  margin: 0;
+  color: $font-color;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: rem(16);
+  line-height: rem(24);
+  scroll-behavior: smooth;
+  .notscroll {
+    overflow: hidden;
+  }
+  // &::-webkit-scrollbar {
+  //     display: none;
+  // }
 }
 
 a {
-    text-decoration: none;
-    color: $font-color;
+  text-decoration: none;
+  color: $font-color;
 }
 
 :active,
 :hover,
 :focus {
-    outline: 0;
-    outline-offset: 0;
+  outline: 0;
+  outline-offset: 0;
 }
 
 h1 {
-    /* Header/H1 */
+  /* Header/H1 */
 
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 800;
-    @include adaptiv-value('font-size', 64, 30, 0);
-    @include adaptiv-value('line-height', 86, 36.75, 0);
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  @include adaptiv-value('font-size', 64, 30, 0);
+  @include adaptiv-value('line-height', 86, 36.75, 0);
 }
 
 h2 {
-    /* Header/H2 */
+  /* Header/H2 */
 
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 300;
-    @include adaptiv-value('font-size', 48, 18, 0);
-    @include adaptiv-value('line-height', 60, 21, 0);
-    // font-size: rem(48);
-    // line-height: rem(60);
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  @include adaptiv-value('font-size', 48, 18, 0);
+  @include adaptiv-value('line-height', 60, 21, 0);
+  // font-size: rem(48);
+  // line-height: rem(60);
 }
 
 h3 {
-    /* Header/H3 */
+  /* Header/H3 */
 
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 300;
-    font-size: rem(32);
-    line-height: rem(40);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: rem(32);
+  line-height: rem(40);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 h4 {
-    /* Header/H4 */
+  /* Header/H4 */
 
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 300;
-    font-size: rem(24);
-    line-height: rem(36);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  font-size: rem(24);
+  line-height: rem(36);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 h5 {
-    /* Header/H5 */
+  /* Header/H5 */
 
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 300;
-    @include adaptiv-value('font-size', 18, 12, 0);
-    @include adaptiv-value('line-height', 30, 18, 0);
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  @include adaptiv-value('font-size', 18, 12, 0);
+  @include adaptiv-value('line-height', 30, 18, 0);
 }
 
 p {
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    font-weight: 300;
-    font-size: rem(16);
-    line-height: rem(24);
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-size: rem(16);
+  line-height: rem(24);
 }
 
 p.big-text {
-    @include adaptiv-value('font-size', 17, 11, 0);
-    @include adaptiv-value('line-height', 24, 18, 0);
+  @include adaptiv-value('font-size', 17, 11, 0);
+  @include adaptiv-value('line-height', 24, 18, 0);
 }
 
 p.sub-text {
-    font-size: rem(14);
-    line-height: rem(18);
+  font-size: rem(14);
+  line-height: rem(18);
 }

@@ -133,7 +133,7 @@ body,
 html {
   height: 100%;
   margin: 0;
-  color: #58595B;
+  color: #58595b;
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 300;
@@ -142,9 +142,14 @@ html {
   scroll-behavior: smooth;
 }
 
+body .notscroll,
+html .notscroll {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
-  color: #58595B;
+  color: #58595b;
 }
 
 :active,
@@ -267,7 +272,7 @@ p.sub-text {
   display: block;
   height: 0.125rem;
   width: 100%;
-  background-color: #58595B;
+  background-color: #58595b;
   border-radius: 0.125rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -528,7 +533,7 @@ p.sub-text {
 .footer {
   padding: 33px 0;
   margin: 22px 22px 0 22px;
-  border-top: 1px solid #58595B;
+  border-top: 1px solid #58595b;
 }
 
 .footer__nav {
@@ -606,8 +611,8 @@ p.sub-text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-top: 1px #58595B solid;
-  border-bottom: 1px #58595B solid;
+  border-top: 1px #58595b solid;
+  border-bottom: 1px #58595b solid;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-bottom: -1px;
@@ -630,7 +635,7 @@ p.sub-text {
   text-align: center;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #58595B;
+  color: #58595b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -692,8 +697,8 @@ p.sub-text {
   height: 10px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  border-top: 1px solid #58595B;
-  border-left: 1px solid #58595B;
+  border-top: 1px solid #58595b;
+  border-left: 1px solid #58595b;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -806,7 +811,7 @@ p.sub-text {
 .nav .nav-link::before {
   content: '';
   position: absolute;
-  background-color: #58595B;
+  background-color: #58595b;
   height: 1px;
   bottom: 3px;
   left: 0;
@@ -1118,7 +1123,7 @@ p.sub-text {
   height: 1px;
   -webkit-transform: scale(0);
           transform: scale(0);
-  background-color: #58595B;
+  background-color: #58595b;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
@@ -1325,7 +1330,7 @@ p.sub-text {
   line-height: 3.75rem;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: #58595B;
+  color: #58595b;
   position: absolute;
   left: 0;
   right: 0;
@@ -1421,8 +1426,8 @@ p.sub-text {
   position: fixed;
   width: 16px;
   height: 16px;
-  border-top: #58595B 1px solid;
-  border-left: #58595B 1px solid;
+  border-top: #58595b 1px solid;
+  border-left: #58595b 1px solid;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-transition: all 0.3s ease;
@@ -1564,7 +1569,6 @@ p.sub-text {
   .main .individual-order {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    min-height: calc((var(--vh) * 100) - 70px);
     padding-top: 100px;
   }
   .main .individual-order__logo {
