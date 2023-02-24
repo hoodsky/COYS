@@ -47,9 +47,7 @@ window.onload = function () {
 
     // Создание навигации на слайдере
     generateInd();
-
 }
-
 
 //hamburger menu
 let hamburger = document.querySelector(".hamburger__icon");
@@ -73,11 +71,8 @@ searchIcon.addEventListener('click', () => {
     logo.classList.toggle('active');
 });
 
-
-
-
-
 //слайдер
+
 let slides = document.querySelectorAll('.slide');
 let carouselTrack = document.querySelector('.slider__slides');
 let dotsList = document.querySelector('.slider__dots');
@@ -95,7 +90,6 @@ const updateInd = () => {
         }
     })
 };
-
 
 // создание точек
 

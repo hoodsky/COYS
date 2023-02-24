@@ -11,10 +11,9 @@
   &__filter-category {
     position: relative;
     padding: 12px 0;
-    // height: rem(48);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
     border-top: 1px $font-color solid;
     border-bottom: 1px $font-color solid;
     transition: 0.5s;
@@ -28,6 +27,7 @@
       background-color: #eae6de;
     }
     p {
+      display: block;
       font-family: 'Gilroy';
       font-style: normal;
       font-weight: 300;
@@ -37,14 +37,6 @@
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: $font-color;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       transition: 0.5s;
     }
   }
@@ -62,11 +54,7 @@
 }
 .category-radio,
 .category-checkbox {
-  opacity: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: none;
 
   &:checked ~ .checked {
     opacity: 1;
@@ -97,4 +85,8 @@
 .sizes {
   position: relative;
   display: flex;
+  flex-direction: column;
+  &__checkbox {
+    // height: 10px;
+  }
 }
